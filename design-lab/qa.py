@@ -3,7 +3,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 from PIL import Image
-import functools,http.server,threading,json,io,numpy as np,traceback,posixpath
+import functools,http.server,threading,json,io,numpy as np,traceback
 from urllib.parse import urlsplit,unquote
 ROOT=Path(__file__).resolve().parents[1];SITE=ROOT/'site';OUT=ROOT/'reports/design-lab';OUT.mkdir(parents=True,exist_ok=True)
 IDS=['v1','v2','v3','v4','v5','v6a','v6b','v08','v09','v10'];checks=[];errors=[]
@@ -34,15 +34,17 @@ try:
    broken=page.locator('img').evaluate_all('(xs)=>xs.filter(x=>!x.complete||!x.naturalWidth).map(x=>x.getAttribute("src"))');check(id+' images loaded',not broken,broken)
    for width in [1440,390,320]:
     page.set_viewport_size({'width':width,'height':1000});page.wait_for_timeout(90);dimensions=page.evaluate('({viewport:innerWidth,width:document.documentElement.scrollWidth})');check(id+' responsive '+str(width),dimensions['width']<=dimensions['viewport'],dimensions)
-    if id in ['v09','v10']:
-     page.screenshot(path=str(OUT/f'{id}-restaurant-{width}.png'),full_page=True)
+    if id in ['v09','v10']:page.screenshot(path=str(OUT/f'{id}-restaurant-{width}.png'),full_page=True)
    page.set_viewport_size({'width':1440,'height':1000})
    if id in ['v09','v10']:
     thumbnail(page.screenshot(full_page=True),SITE/'assets/proposals'/f'{id}-restaurant.webp')
     if id=='v09':
      check('09 uses exact photographic cutout',page.locator('.owner-sticker[src*="owner-mono.webp"]').count()==1);page.locator('[data-art-next]').click();check('09 graphic slideshow',page.locator('[data-art-count]').inner_text().startswith('02'))
     if id=='v10':
-     check('10 uses extracted pieces',page.locator('[data-source-piece]').count()==19)
+     expected=set(json.loads((SITE/'assets/lab/extraction.json').read_text())['crops'])
+     actual=page.locator('[data-source-piece]').evaluate_all('(xs)=>xs.map(x=>x.dataset.sourcePiece)')
+     check('10 uses every extracted piece exactly once',set(actual)==expected and len(actual)==len(expected),{'expected':len(expected),'actual':len(actual)})
+     page.mouse.move(0,0)
      raw=page.locator('.replica-board').screenshot(path=str(OUT/'v10-reference-reconstruction.png'))
      rendered=Image.open(io.BytesIO(raw)).convert('RGB').resize((1217,1280));ref=Image.open(SITE/'assets/lab/reference-original.png').convert('RGB').resize((1217,1280))
      a=np.asarray(rendered,dtype=float);b=np.asarray(ref,dtype=float);mae=float(np.mean(np.abs(a[:1086]-b[:1086])));check('10 source composition pixel comparison above corrected footer',mae<4,{'mean_absolute_error_0_255':round(mae,4)})
@@ -59,10 +61,9 @@ try:
      for w in [1440,390,320]:
       page.set_viewport_size({'width':w,'height':1000});page.screenshot(path=str(OUT/f'{id}-shop-{w}.png'),full_page=True);check(id+' shop width '+str(w),page.evaluate('document.documentElement.scrollWidth<=innerWidth'))
      page.set_viewport_size({'width':1440,'height':1000});thumbnail(page.screenshot(full_page=True),SITE/'assets/proposals'/f'{id}-shop.webp');page.locator('[data-add="bujanda-blanco"]').click()
-    if kind=='product':check(id+' actual wine detail','Bujanda' in page.locator('main').inner_text())
-    if kind=='cart':check(id+' test cart works','Bujanda' in page.locator('main').inner_text())
-    if kind=='checkout':check(id+' no-payment test checkout',page.locator('#checkout-form').count()==1 and 'Test' in page.locator('main').inner_text())
-   # All local dependencies and routes of the complete new paired route sets.
+    if kind=='product':check(id+' actual wine detail','Bujanda' in page.locator('main').text_content())
+    if kind=='cart':check(id+' test cart works','Bujanda' in page.locator('main').text_content())
+    if kind=='checkout':check(id+' no-payment test checkout',page.locator('#checkout-form').count()==1 and 'Test' in page.locator('main').text_content())
    missing=[]
    for f in (SITE/'entwuerfe'/id).rglob('*.html'):
     s=BeautifulSoup(f.read_text(),'html.parser')
