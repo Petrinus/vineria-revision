@@ -1,0 +1,7 @@
+<!-- LOGO -->
+<div class="col-xs-12 col-sm-12 logo">
+<div class="logo-text">
+<!-- //LOGO -->
+<img src="/images/vineriadeleste/speisen/kichererbsensalat.jpg#joomlaImage://local-images/vineriadeleste/speisen/kichererbsensalat.jpg?width=422&height=504" alt="Tab Intro Image" />
+<a href="#tebi-reservations">Abrir el widget de Reservas de Tebi</a></div>
+<script src="https://live.tebi.co/ecom/widget-manager.js" data-widget-token="824513_4d4bfde31efd7da60f1f0fa1ef6ade717e9cac2cec305bfe90e5f9251e54576e" id="tebi"></script>
