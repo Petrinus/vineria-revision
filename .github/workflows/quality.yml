@@ -2,7 +2,7 @@ name: Verify integrated restaurant and tienda
 on:
   push:
     branches: [main]
-    paths: ['tools/qa.py', 'tools/public-check.py', '.github/workflows/quality.yml']
+    paths: ['tools/qa.py', 'tools/check_public_access.py', 'tools/polish.py', 'server/**', '.github/workflows/quality.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,13 +20,18 @@ jobs:
         run: |
           python3 tools/assets.py
           python3 tools/build.py
+          python3 tools/polish.py
       - name: Functional and responsive checks
         id: qa
         continue-on-error: true
         run: python3 tools/qa.py
-      - name: Public URL check
-        if: always() && hashFiles('tools/public-check.py') != ''
-        run: python3 tools/public-check.py
+      - name: Isolated authenticated management checks
+        id: server
+        continue-on-error: true
+        run: python3 server/test.py
+      - name: Public first-visit check
+        if: always()
+        run: python3 tools/check_public_access.py
       - name: Save reports
         if: always()
         run: |
@@ -34,7 +39,7 @@ jobs:
           git config user.email '151435441+Petrinus@users.noreply.github.com'
           git add reports
           if ! git diff --cached --quiet; then
-            git commit -m 'Record executed browser QA and screenshots [skip ci]'
+            git commit -m 'Record executed browser and management QA [skip ci]'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
@@ -46,6 +51,8 @@ jobs:
             site
             reports
             server
+            tools
+            src
       - name: Assert QA status
-        if: steps.qa.outcome != 'success'
+        if: steps.qa.outcome != 'success' || steps.server.outcome != 'success'
         run: exit 1
