@@ -1,0 +1,16 @@
+{
+  "usage": "Client design review only. Image publication rights and current vintages must be confirmed before commercial launch.",
+  "products": [
+    {"id":"mejillones","kind":"tin","source_page":"https://www.fetasoller.com/es/mallorca-shop.php/tienda/catalogo/charcuteria_y_queso/marinos/cabo_de_penas_mejillones_cologicos","image":"https://www.fetasoller.com/userFiles/Image/Shop/Artikel/Oel_Essig_Eingelegtes/Eingelegtes/Cabo_de_Penas/00690_Mejillones_CaboDePenas.jpg","alt":"Cabo de Peñas · Mejillones en escabeche · Originalverpackung","catalogue_correction":{"brand":"Cabo de Peñas","pack":"111 g","amount":111,"description":"Miesmuscheln in Escabeche mit Apfelessig und Olivenöl. Die gezeigte Dose stammt aus Galicien."}},
+    {"id":"oricios","kind":"tin","source_page":"https://laespanolameats.com/es/conservas-de-pescado/caviar-de-oricios-.html","image":"https://laespanolameats.com/6851-thickbox_default/caviar-de-oricios-.jpg","alt":"Agromar · Caviar de oricios · Originaldose"},
+    {"id":"cecina","kind":"pack","source_page":"https://www.montegomez.com/tienda-online/cecina-pablo/","image":"https://www.montegomez.com/wp-content/uploads/2023/06/cecina-pablo.jpg","alt":"Cecinas Pablo · Cecina loncheada · Originalverpackung"},
+    {"id":"chorizo","kind":"pack","candidate_key":"chorizo-page","source_page":"https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html","alt":"Embutidos Vallina · Chorizo asturiano extra · Originalverpackung"},
+    {"id":"bujanda-blanco","kind":"wine","candidate_key":"bujanda","source_page":"https://familiamartinezbujanda.com/tienda/vinos/blancos-y-dulces/vina-bujanda-viura/","image":"https://familiamartinezbujanda.com/wp-content/uploads/2022/05/vina-bujanda-nacional-viura.jpg","alt":"Viña Bujanda Viura · Originalflasche"},
+    {"id":"blanco-nieva","kind":"wine","candidate_key":"nieva","source_page":"https://martue.com/producto/blanco-nieva-sauvignon-blanc-2025/","image":"https://martue.com/wp-content/uploads/2025/05/BLANCO-NIEVA-SAUVIGNON-BLANC-2024.png","alt":"Blanco Nieva Sauvignon Blanc · Originalflasche; Jahrgang der Abbildung kann abweichen"},
+    {"id":"vanidade","kind":"wine","candidate_key":"vanidade","source_page":"https://vinaalmirante.com/en/vinos/vanidade-en/","image":"https://vinaalmirante.com/wp-content/uploads/vanidade-producto.jpg","alt":"Vanidade Albariño · Originalflasche"},
+    {"id":"egiarte-crianza","kind":"wine","candidate_key":"egiarte","source_page":"https://tienda.lezaun.com/es/botellas-egiarte/29-egiarte-crianza-bio.html","alt":"Egiarte Crianza · Originalflasche; Jahrgang der Abbildung kann abweichen"},
+    {"id":"lezaun-tempranillo","kind":"wine","candidate_key":"lezaun","source_page":"https://tienda.lezaun.com/es/botellas-lezaun/25-lezaun-tempranillo.html","image":"https://tienda.lezaun.com/45-large_default/lezaun-tempranillo.jpg","alt":"Lezaun Tempranillo · Originalflasche; Jahrgang der Abbildung kann abweichen"},
+    {"id":"terrae-finca-vasallo","kind":"wine","candidate_key":"terrae","source_page":"https://www.bodegastempore.com/en/news/new-gold-medal-for-our-organic-wine-terrae-finca-vasallo-garnacha-100/","alt":"Terrae Finca Vasallo · Produktaufnahme des Weinguts"},
+    {"id":"nuestro","kind":"wine","candidate_key":"nuestro","source_page":"https://www.vinetibo.es/products/nuestro-8-meses","alt":"Nuestro 8 meses · Originalflasche"}
+  ]
+}
