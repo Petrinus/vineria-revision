@@ -20,30 +20,18 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: main
-      - name: Refresh the provider cache for our own updated review pages
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import urllib.request,urllib.parse,json
-          base='https://raw.githack.com/Petrinus/vineria-revision/main/site/'
-          paths=['index.html','entwuerfe/index.html','verwaltung/index.html','verwaltung/vorschau.html','assets/catalogue.css','assets/catalogue.js','assets/management-preview.js']
-          results=[]
-          for path in paths:
-              target=base+path
-              req=urllib.request.Request('https://raw.githack.com/purge?url='+urllib.parse.quote(target,safe=''),method='DELETE')
-              try:
-                  r=urllib.request.urlopen(req,timeout=15)
-                  results.append({'target':target,'status':r.status})
-              except Exception as e:results.append({'target':target,'error':str(e)})
-          out=Path('reports/proposals');out.mkdir(parents=True,exist_ok=True)
-          (out/'cache-refresh.json').write_text(json.dumps(results,indent=2));print(json.dumps(results,indent=2))
-          PY
       - name: Prepare browser
         run: |
           python3 -m pip install --quiet playwright
           python3 -m playwright install --with-deps chromium
-      - name: Verify anonymous access to all seven design pairs
-        run: python3 tools/verify_public_proposals.py
+      - name: Verify the exact complete review revision without stale branch caching
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          source=Path('tools/verify_public_proposals.py').read_text()
+          source=source.replace('https://raw.githack.com/Petrinus/vineria-revision/main/site/','https://rawcdn.githack.com/Petrinus/vineria-revision/6c176c44bd7a88fc09826ed810cafbab5f5a84c7/site/')
+          exec(compile(source,'tools/verify_public_proposals.py','exec'))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
