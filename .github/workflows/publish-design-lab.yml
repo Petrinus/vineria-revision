@@ -22,7 +22,7 @@ jobs:
       - name: Build the requested paired designs
         run: |
           python3 design-lab/build.py
-          if test -f design-lab/refine.py; then python3 design-lab/refine.py; fi
+          python3 design-lab/refine.py
       - name: Capture layout diagnostics
         run: python3 design-lab/diagnose.py
       - name: Verify navigation, images, mobile and complete content
