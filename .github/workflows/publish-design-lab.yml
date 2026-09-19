@@ -1,0 +1,45 @@
+name: Publish models 09 and 10
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['design-lab/build.py', 'design-lab/lab.css', 'design-lab/ui.js', 'design-lab/qa.py', '.github/workflows/publish-design-lab.yml']
+permissions:
+  contents: write
+concurrency:
+  group: vineria-publish-design-lab
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install build and browser tools
+        run: |
+          python3 -m pip install --quiet pillow numpy beautifulsoup4 playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Build the requested paired designs
+        run: python3 design-lab/build.py
+      - name: Verify navigation, images, mobile and complete content
+        run: python3 design-lab/qa.py
+      - name: Commit verified public preview files
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add site update/control.js reports/design-lab
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish models 09 and 10 with complete menus and matching shops [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          git rev-parse HEAD > reports/design-lab/published-revision.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vineria-models-09-and-10
+          path: |
+            site
+            reports/design-lab
+            design-lab/README.md
+            docs/JOOMLA_MIGRACION_ES.md
