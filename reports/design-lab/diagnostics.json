@@ -1,209 +1,136 @@
 {
-  "entwuerfe/v09/index.html": [
-    {
-      "tag": "DIV",
-      "cls": "punk-copy",
-      "text": "VINERIA DEL ESTE · BERLINWein.Tapas.Leben.Gute Pro",
-      "x": 22,
-      "right": 341.390625,
-      "w": 319.390625
-    },
-    {
-      "tag": "H1",
-      "cls": "",
-      "text": "Wein.Tapas.Leben.",
-      "x": 22,
-      "right": 329.390625,
-      "w": 307.390625
-    },
-    {
-      "tag": "SPAN",
-      "cls": "",
-      "text": "Tapas.",
-      "x": 35.99951171875,
-      "right": 333.64111328125,
-      "w": 297.6416015625
-    },
-    {
-      "tag": "SPAN",
-      "cls": "",
-      "text": "Leben.",
-      "x": 24.360952377319336,
-      "right": 333.15465354919434,
-      "w": 308.793701171875
-    },
-    {
-      "tag": "P",
-      "cls": "",
-      "text": "Gute Produkte. Ehrliche Küche. Lange Abende.Spanie",
-      "x": 22,
-      "right": 329.390625,
-      "w": 307.390625
-    },
-    {
-      "tag": "DIV",
-      "cls": "hero-actions",
-      "text": "Die ganze Karte ↓Unsere Tienda ↗",
-      "x": 22,
-      "right": 329.390625,
-      "w": 307.390625
-    },
-    {
-      "tag": "DIV",
-      "cls": "punk-stage",
-      "text": "BÄNSCHSTRASSE 41FRIEDRICHSHAIN←01 / 6→Abspielen",
-      "x": 22,
-      "right": 341.390625,
-      "w": 319.390625
-    },
-    {
-      "tag": "IMG",
-      "cls": "punk-food",
-      "text": "",
-      "x": -7.320777893066406,
-      "right": 370.71138763427734,
-      "w": 378.03216552734375
-    },
-    {
-      "tag": "IMG",
-      "cls": "owner-sticker",
-      "text": "",
-      "x": 216.84375,
-      "right": 341.390625,
-      "w": 124.546875
-    }
-  ],
+  "entwuerfe/v09/index.html": [],
   "entwuerfe/v09/shop/index.html": [],
   "bounds": {
-    "x": 111.5,
-    "y": 36.5,
+    "x": 112,
+    "y": 37,
     "width": 1217,
     "height": 1280
   },
   "pieces": [
     {
       "name": "wordmark",
-      "x": 111.5,
-      "y": 36.5,
+      "x": 112,
+      "y": 37,
       "width": 256,
       "height": 145
     },
     {
       "name": "navigation",
-      "x": 367.5,
-      "y": 36.5,
+      "x": 368,
+      "y": 37,
       "width": 961,
       "height": 110
     },
     {
       "name": "left-collage",
-      "x": 111.5,
-      "y": 181.5,
+      "x": 112,
+      "y": 182,
       "width": 603,
       "height": 723
     },
     {
       "name": "headline",
-      "x": 715.5,
-      "y": 208.5,
+      "x": 716,
+      "y": 209,
       "width": 294,
       "height": 392
     },
     {
       "name": "intro-copy",
-      "x": 729.5,
-      "y": 606.5,
+      "x": 730,
+      "y": 607,
       "width": 252,
       "height": 91
     },
     {
       "name": "menu-button",
-      "x": 735.5,
-      "y": 710.5,
+      "x": 736,
+      "y": 711,
       "width": 230,
       "height": 51
     },
     {
       "name": "reservation-button",
-      "x": 735.5,
-      "y": 768.5,
+      "x": 736,
+      "y": 769,
       "width": 230,
       "height": 54
     },
     {
       "name": "bottle",
-      "x": 1011.5,
-      "y": 146.5,
+      "x": 1012,
+      "y": 147,
       "width": 317,
       "height": 375
     },
     {
       "name": "tienda-note",
-      "x": 1029.5,
-      "y": 520.5,
+      "x": 1030,
+      "y": 521,
       "width": 229,
       "height": 156
     },
     {
       "name": "salud",
-      "x": 985.5,
-      "y": 676.5,
+      "x": 986,
+      "y": 677,
       "width": 133,
       "height": 91
     },
     {
       "name": "facade",
-      "x": 1118.5,
-      "y": 676.5,
+      "x": 1119,
+      "y": 677,
       "width": 210,
       "height": 228
     },
     {
       "name": "feature-restaurant",
-      "x": 111.5,
-      "y": 904.5,
+      "x": 112,
+      "y": 905,
       "width": 447,
       "height": 218
     },
     {
       "name": "feature-menu",
-      "x": 558.5,
-      "y": 904.5,
+      "x": 559,
+      "y": 905,
       "width": 314,
       "height": 218
     },
     {
       "name": "feature-shop",
-      "x": 872.5,
-      "y": 904.5,
+      "x": 873,
+      "y": 905,
       "width": 455.984375,
       "height": 218
     },
     {
       "name": "olives",
-      "x": 380.5,
-      "y": 955.5,
+      "x": 381,
+      "y": 956,
       "width": 169,
       "height": 145
     },
     {
       "name": "herbs",
-      "x": 712.5,
-      "y": 956.5,
+      "x": 713,
+      "y": 957,
       "width": 158,
       "height": 146
     },
     {
       "name": "tin",
-      "x": 1100.5,
-      "y": 970.5,
+      "x": 1101,
+      "y": 971,
       "width": 196,
       "height": 131
     },
     {
       "name": "footer",
-      "x": 111.5,
-      "y": 1122.5,
+      "x": 112,
+      "y": 1123,
       "width": 1217,
       "height": 194
     }
@@ -211,55 +138,55 @@
   "row_error": [
     {
       "from": 0,
-      "mae": 8.231
+      "mae": 4.225
     },
     {
       "from": 100,
-      "mae": 3.862
+      "mae": 2.48
     },
     {
       "from": 200,
-      "mae": 7.408
+      "mae": 5.756
     },
     {
       "from": 300,
-      "mae": 5.689
+      "mae": 4.915
     },
     {
       "from": 400,
-      "mae": 6.061
+      "mae": 5.104
     },
     {
       "from": 500,
-      "mae": 5.687
+      "mae": 5.234
     },
     {
       "from": 600,
-      "mae": 6.814
+      "mae": 7.063
     },
     {
       "from": 700,
-      "mae": 5.218
+      "mae": 5.786
     },
     {
       "from": 800,
-      "mae": 2.385
+      "mae": 2.548
     },
     {
       "from": 900,
-      "mae": 6.794
+      "mae": 6.755
     },
     {
       "from": 1000,
-      "mae": 3.049
+      "mae": 4.929
     },
     {
       "from": 1100,
-      "mae": 8.118
+      "mae": 8.429
     },
     {
       "from": 1200,
-      "mae": 2.565
+      "mae": 3.678
     }
   ]
 }

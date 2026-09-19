@@ -519,18 +519,18 @@
     },
     {
       "name": "v09 responsive 390",
-      "pass": false,
+      "pass": true,
       "detail": {
         "viewport": 390,
-        "width": 397
+        "width": 390
       }
     },
     {
       "name": "v09 responsive 320",
-      "pass": false,
+      "pass": true,
       "detail": {
         "viewport": 320,
-        "width": 371
+        "width": 320
       }
     },
     {
@@ -603,15 +603,18 @@
       }
     },
     {
-      "name": "10 uses extracted pieces",
-      "pass": false,
-      "detail": null
+      "name": "10 uses every extracted piece exactly once",
+      "pass": true,
+      "detail": {
+        "expected": 18,
+        "actual": 18
+      }
     },
     {
       "name": "10 source composition pixel comparison above corrected footer",
       "pass": false,
       "detail": {
-        "mean_absolute_error_0_255": 5.6668
+        "mean_absolute_error_0_255": 4.9684
       }
     },
     {
@@ -676,12 +679,12 @@
     },
     {
       "name": "v09 shop width 390",
-      "pass": false,
+      "pass": true,
       "detail": null
     },
     {
       "name": "v09 shop width 320",
-      "pass": false,
+      "pass": true,
       "detail": null
     },
     {
@@ -701,7 +704,7 @@
     },
     {
       "name": "v09 test cart works",
-      "pass": false,
+      "pass": true,
       "detail": null
     },
     {
