@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "news_enabled": true,
+  "news_limit": 2,
+  "news": [
+    {
+      "id": "paella-beispiel",
+      "title": "Diesen Sonntag: Paella",
+      "text": "Ein großer Tisch, eine Paella zum Teilen und ein gutes Glas dazu. Fragt uns nach dem nächsten gemeinsamen Sonntag.",
+      "image": "assets/photo-4b6ccc01af.webp",
+      "image_alt": "Ein Gericht aus der Vineria; Beispielbild, keine Paella-Abbildung",
+      "enabled": true,
+      "example": true,
+      "button_label": "Tisch anfragen",
+      "button_url": "https://vineriaytapas.de/#tebi-reservations",
+      "starts_at": "",
+      "ends_at": ""
+    },
+    {
+      "id": "tienda-beispiel",
+      "title": "Ein Stück Vineria für zu Hause.",
+      "text": "Unsere Weine und spanischen Spezialitäten gibt es bald auch in der Tienda. Entdeckt schon jetzt unsere geplante Auswahl.",
+      "image": "assets/bar.webp",
+      "image_alt": "Originalaufnahme aus der Vineria",
+      "enabled": false,
+      "example": true,
+      "button_label": "Tienda ansehen",
+      "button_url": "@shop",
+      "starts_at": "",
+      "ends_at": ""
+    }
+  ],
+  "instagram": {
+    "enabled": true,
+    "count": 4,
+    "username": "vineria.del.este",
+    "connected": false,
+    "last_sync": null,
+    "display_mode": "existing_photos_preview",
+    "items": [
+      {"id":"terrasse","image":"assets/terrasse.webp","alt":"Draußen vor der Vineria","permalink":"https://www.instagram.com/vineria.del.este/","source":"existing_restaurant_photo"},
+      {"id":"bar","image":"assets/bar.webp","alt":"Ein Abend an der Bar","permalink":"https://www.instagram.com/vineria.del.este/","source":"existing_restaurant_photo"},
+      {"id":"gericht","image":"assets/photo-4b6ccc01af.webp","alt":"Ein Teller aus der Vineria","permalink":"https://www.instagram.com/vineria.del.este/","source":"existing_restaurant_photo"},
+      {"id":"menschen","image":"assets/portrait.webp","alt":"Die Menschen hinter der Vineria","permalink":"https://www.instagram.com/vineria.del.este/","source":"existing_restaurant_photo"}
+    ]
+  }
+}
