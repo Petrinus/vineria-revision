@@ -1,0 +1,83 @@
+name: Publish all design proposals
+on:
+  push:
+    branches: [main]
+    paths: ['proposal-source/**', 'tools/proposals.py', 'tools/qa_proposals.py', 'src/proposals/**', '.github/workflows/proposal-catalogue.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: complete-proposal-catalogue
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Recover exact reviewed sources
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,base64,lzma,json
+          source=Path('proposal-source')
+          payload=''.join((source/f'{i:02d}.txt').read_text().strip() for i in range(6))
+          actual=hashlib.sha256(payload.encode()).hexdigest()
+          expected='699a07bbe47d217d551f43e84630002307a6dc4a4d98520f82b5766c8b7df1ae'
+          assert actual==expected, f'Source checksum mismatch: {actual}'
+          files=json.loads(lzma.decompress(base64.b64decode(payload)))
+          for name,content in files.items():
+              p=Path(name)
+              assert '..' not in p.parts and not p.is_absolute()
+              assert name.startswith('src/proposals/') or name in ['tools/proposals.py','tools/qa_proposals.py']
+              p.parent.mkdir(parents=True,exist_ok=True)
+              p.write_text(content)
+          print('Restored',len(files),'reviewed source files')
+          PY
+      - name: Install browser verification tools
+        run: |
+          python3 -m pip install --quiet Pillow beautifulsoup4 playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Build every restaurant and matching shop
+        run: |
+          python3 tools/build_base.py
+          python3 tools/refine.py
+          python3 tools/polish.py
+          python3 tools/proposals.py
+      - name: Verify all pairs and capture real thumbnails
+        run: python3 tools/qa_proposals.py
+      - name: Publish catalogue files and sources
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          mkdir -p reports/proposals
+          cp proposal-qa.json portal-desktop.png portal-mobile.png reports/proposals/
+          git add site src/proposals tools/proposals.py tools/qa_proposals.py reports/proposals
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish all seven paired proposals and common management preview [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Verify public catalogue delivery
+        run: |
+          python3 - <<'PY'
+          import urllib.request,time,json
+          urls=['https://raw.githack.com/Petrinus/vineria-revision/main/site/index.html?catalogue=all-designs','https://raw.githack.com/Petrinus/vineria-revision/main/site/entwuerfe/index.html?catalogue=all-designs','https://raw.githack.com/Petrinus/vineria-revision/main/site/verwaltung/index.html?catalogue=all-designs']
+          results=[]
+          for u in urls:
+              try:
+                  r=urllib.request.urlopen(u,timeout=30)
+                  text=r.read().decode()
+                  results.append({'url':u,'status':r.status,'selector_present':'proposal-catalogue' in text,'confirmation_screen':'verification' in text.lower() or 'confirm' in text.lower()})
+              except Exception as e:results.append({'url':u,'error':str(e)})
+          print(json.dumps(results,indent=2))
+          open('public-catalogue-check.json','w').write(json.dumps(results,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: all-proposals-with-shared-management
+          path: |
+            site
+            reports/proposals
+            proposal-qa.json
+            public-catalogue-check.json
