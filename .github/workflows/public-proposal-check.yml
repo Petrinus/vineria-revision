@@ -1,0 +1,30 @@
+name: Verify public proposal selector
+on:
+  workflow_run:
+    workflows: ['Publish all design proposals']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: public-proposal-check
+  cancel-in-progress: true
+jobs:
+  public-check:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Prepare browser
+        run: |
+          python3 -m pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Verify anonymous access to all seven design pairs
+        run: python3 tools/verify_public_proposals.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-proposal-browser-check
+          path: reports/proposals
