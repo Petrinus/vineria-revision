@@ -1,0 +1,39 @@
+name: Publish proposal comparison portal
+on:
+  push:
+    branches: [main]
+    paths: ['review/**', 'tools/build_review_portal.py', 'tools/qa_review_portal.py', '.github/workflows/proposal-portal.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: proposal-portal
+  cancel-in-progress: true
+jobs:
+  portal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 -m pip install --quiet pillow playwright
+      - run: python3 -m playwright install --with-deps chromium
+      - name: Build neutral proposal portal
+        run: python3 tools/build_review_portal.py
+      - name: Verify paired designs and shared management
+        run: python3 tools/qa_review_portal.py
+      - name: Publish verified portal
+        run: |
+          git config user.name 'Vineria proposal portal'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add site/entwuerfe site/verwaltung/vorschau.html site/assets/portal-*.jpg reports/portal
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish equal-status design pairs and shared management preview [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposal-portal-review
+          path: |
+            site
+            reports/portal
