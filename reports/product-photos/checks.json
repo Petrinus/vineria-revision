@@ -1,0 +1,55 @@
+{
+  "shops": [
+    {
+      "model": "v1",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    },
+    {
+      "model": "v2",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    },
+    {
+      "model": "v3",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    },
+    {
+      "model": "v4",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    },
+    {
+      "model": "v5",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    },
+    {
+      "model": "v6a",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    },
+    {
+      "model": "v6b",
+      "photos": 11,
+      "wine_photos": 7,
+      "all_loaded": true,
+      "mobile_overflow": false
+    }
+  ],
+  "javascript_errors": [],
+  "passed": true
+}

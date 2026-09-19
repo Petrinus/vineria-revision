@@ -1,0 +1,216 @@
+{
+  "products": [
+    {
+      "id": "mejillones",
+      "kind": "tin",
+      "source_page": "https://www.fetasoller.com/es/mallorca-shop.php/tienda/catalogo/charcuteria_y_queso/marinos/cabo_de_penas_mejillones_cologicos",
+      "image": "https://www.fetasoller.com/userFiles/Image/Shop/Artikel/Oel_Essig_Eingelegtes/Eingelegtes/Cabo_de_Penas/00690_Mejillones_CaboDePenas.jpg",
+      "alt": "Cabo de Peñas · Mejillones en escabeche · Originalverpackung",
+      "catalogue_correction": {
+        "brand": "Cabo de Peñas",
+        "pack": "111 g",
+        "amount": 111,
+        "description": "Miesmuscheln in Escabeche mit Apfelessig und Olivenöl. Die gezeigte Dose stammt aus Galicien."
+      },
+      "file": "assets/products/mejillones.webp",
+      "image_url": "https://www.fetasoller.com/userFiles/Image/Shop/Artikel/Oel_Essig_Eingelegtes/Eingelegtes/Cabo_de_Penas/00690_Mejillones_CaboDePenas.jpg",
+      "width": 747,
+      "height": 747,
+      "original_size": [
+        747,
+        747
+      ],
+      "sha256": "d647bc2aa8496a89da16b0088e4775cedbe70113fe936fe23672bf4f80a39d81",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "oricios",
+      "kind": "tin",
+      "source_page": "https://laespanolameats.com/es/conservas-de-pescado/caviar-de-oricios-.html",
+      "image": "https://laespanolameats.com/6851-thickbox_default/caviar-de-oricios-.jpg",
+      "alt": "Agromar · Caviar de oricios · Originaldose",
+      "file": "assets/products/oricios.webp",
+      "image_url": "https://laespanolameats.com/6851-thickbox_default/caviar-de-oricios-.jpg",
+      "width": 800,
+      "height": 1034,
+      "original_size": [
+        1100,
+        1422
+      ],
+      "sha256": "a2f3896cb0b8b675b34654c52db7d3feab702525fa0c055c6e3e9d2ac2c66a5b",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "cecina",
+      "kind": "pack",
+      "source_page": "https://www.montegomez.com/tienda-online/cecina-pablo/",
+      "image": "https://www.montegomez.com/wp-content/uploads/2023/06/cecina-pablo.jpg",
+      "alt": "Cecinas Pablo · Cecina loncheada · Originalverpackung",
+      "file": "assets/products/cecina.webp",
+      "image_url": "https://www.montegomez.com/wp-content/uploads/2023/06/cecina-pablo.jpg",
+      "width": 600,
+      "height": 443,
+      "original_size": [
+        600,
+        600
+      ],
+      "sha256": "3c0c6d78b3f2fe9a98727e8084953e36ff2d5748b82b14527b47c7ac37e9391a",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "chorizo",
+      "kind": "pack",
+      "candidate_key": "chorizo-page",
+      "source_page": "https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html",
+      "alt": "Embutidos Vallina · Chorizo asturiano extra · Originalverpackung",
+      "file": "assets/products/chorizo.webp",
+      "image_url": "https://puxa.es/49-large_default/chorizo-extra-paq-250-g.jpg",
+      "width": 560,
+      "height": 293,
+      "original_size": [
+        590,
+        585
+      ],
+      "sha256": "6b69e9b8cf02a7376b4b3f013fd45e50e1afe2bf511f27252b93a72f719cdc08",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "bujanda-blanco",
+      "kind": "wine",
+      "candidate_key": "bujanda",
+      "source_page": "https://familiamartinezbujanda.com/tienda/vinos/blancos-y-dulces/vina-bujanda-viura/",
+      "image": "https://familiamartinezbujanda.com/wp-content/uploads/2022/05/vina-bujanda-nacional-viura.jpg",
+      "alt": "Viña Bujanda Viura · Originalflasche",
+      "file": "assets/products/bujanda-blanco.webp",
+      "image_url": "https://familiamartinezbujanda.com/wp-content/uploads/2022/05/vina-bujanda-nacional-viura.jpg",
+      "width": 158,
+      "height": 584,
+      "original_size": [
+        600,
+        600
+      ],
+      "sha256": "3c8f460271db79a4ffc753801c8041a034ee63e46f85306be821e5778e445f66",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "blanco-nieva",
+      "kind": "wine",
+      "candidate_key": "nieva",
+      "source_page": "https://martue.com/producto/blanco-nieva-sauvignon-blanc-2025/",
+      "image": "https://martue.com/wp-content/uploads/2025/05/BLANCO-NIEVA-SAUVIGNON-BLANC-2024.png",
+      "alt": "Blanco Nieva Sauvignon Blanc · Originalflasche; Jahrgang der Abbildung kann abweichen",
+      "file": "assets/products/blanco-nieva.webp",
+      "image_url": "https://martue.com/wp-content/uploads/2025/05/BLANCO-NIEVA-SAUVIGNON-BLANC-2024.png",
+      "width": 261,
+      "height": 1100,
+      "original_size": [
+        890,
+        1952
+      ],
+      "sha256": "ad8ea85579c49c316a0b53ada996e74efe4db9e63177ea2c012155bdec7cad77",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "vanidade",
+      "kind": "wine",
+      "candidate_key": "vanidade",
+      "source_page": "https://vinaalmirante.com/en/vinos/vanidade-en/",
+      "image": "https://vinaalmirante.com/wp-content/uploads/vanidade-producto.jpg",
+      "alt": "Vanidade Albariño · Originalflasche",
+      "file": "assets/products/vanidade.webp",
+      "image_url": "https://vinaalmirante.com/wp-content/uploads/vanidade-producto.jpg",
+      "width": 189,
+      "height": 595,
+      "original_size": [
+        711,
+        600
+      ],
+      "sha256": "a9742ff344630f3d11cc898c759d439f5b945e2fa99c51b2068bba8bf34810bf",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "egiarte-crianza",
+      "kind": "wine",
+      "source_page": "https://gaztaburua.com/product/egiarte-crianza-bio/",
+      "image": "https://gaztaburua.com/wp-content/uploads/Vino-tinto-Egiarte-crianza-bio-Lezaun-600x400.jpg",
+      "allow_landscape_product_photo": true,
+      "alt": "Egiarte Crianza BIO · Produktfoto mit Originalflasche; Jahrgang kann abweichen",
+      "file": "assets/products/egiarte-crianza.webp",
+      "image_url": "https://gaztaburua.com/wp-content/uploads/Vino-tinto-Egiarte-crianza-bio-Lezaun-600x400.jpg",
+      "width": 600,
+      "height": 384,
+      "original_size": [
+        600,
+        400
+      ],
+      "sha256": "35d069cda8661eb0de986bd2c61b34734c53cf84b33a4cf0737abd7c61d0e707",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "lezaun-tempranillo",
+      "kind": "wine",
+      "source_page": "https://gaztaburua.com/product/lezaun-tempranillo/",
+      "image": "https://gaztaburua.com/wp-content/uploads/Vino-tinto-tempranillo-Lezaun-600x400.jpg",
+      "allow_landscape_product_photo": true,
+      "alt": "Lezaun Tempranillo · Produktfoto mit Originalflasche; Jahrgang kann abweichen",
+      "file": "assets/products/lezaun-tempranillo.webp",
+      "image_url": "https://gaztaburua.com/wp-content/uploads/Vino-tinto-tempranillo-Lezaun-600x400.jpg",
+      "width": 600,
+      "height": 384,
+      "original_size": [
+        600,
+        400
+      ],
+      "sha256": "130db3fd2061059bb9cb2f6bc4877c835b36649031dec6aa3994fa668cc54fa8",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "terrae-finca-vasallo",
+      "kind": "wine",
+      "candidate_key": "terrae",
+      "source_page": "https://www.bodegastempore.com/en/news/new-gold-medal-for-our-organic-wine-terrae-finca-vasallo-garnacha-100/",
+      "alt": "Terrae Finca Vasallo · Produktaufnahme des Weinguts",
+      "file": "assets/products/terrae-finca-vasallo.webp",
+      "image_url": "https://www.bodegastempore.com/ficheros/noticias/montaje_fb_1271739848.jpg",
+      "width": 626,
+      "height": 626,
+      "original_size": [
+        626,
+        626
+      ],
+      "sha256": "a7d10811f7c5205ab4ef9efc81b2ab94af68868c431eca34c07042178a77c2af",
+      "downloaded": true,
+      "warnings": []
+    },
+    {
+      "id": "nuestro",
+      "kind": "wine",
+      "source_page": "https://www.vinetibo.es/products/nuestro-8-meses",
+      "image": "https://www.vinetibo.es/cdn/shop/products/nuestro-8-meses_480x480.jpg?v=1636217173",
+      "alt": "Nuestro 8 meses · Originalflasche",
+      "file": "assets/products/nuestro.webp",
+      "image_url": "https://www.vinetibo.es/cdn/shop/products/nuestro-8-meses_480x480.jpg?v=1636217173",
+      "width": 135,
+      "height": 480,
+      "original_size": [
+        375,
+        480
+      ],
+      "sha256": "c450acfcf3ef46605485f7efff4128a6a60ab32bcc90f98f434dd7d4ed56f6b6",
+      "downloaded": true,
+      "warnings": []
+    }
+  ],
+  "usage": "Client design review only. Image publication rights and current vintages must be confirmed before commercial launch.",
+  "wine_photos": 7,
+  "pages_changed": []
+}

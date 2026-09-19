@@ -1,58 +1,408 @@
 {
-"menu": {
-"wochenkarte": [
-["Coca de espinacas a la catalana con olivada","Blätterteiggebäck mit Spinat nach katalanischer Art",650],
-["Croquetas caseras","Tageskroketten",690],
-["Timbal de remolacha asada, queso de cabra y pesto de Rúcula","Gebackene Rote Bete, Ziegenkäse, Rucolapesto, Cashewkerne und Limetten",920],
-["Carrilleras de ternera","Langsam geschmorte Rinderbäckchen mit cremigem Kartoffel-Parmentier",1350],
-["Conejo al horno con mostaza","Kaninchen aus dem Ofen mit Senf-Zitrus-Soße und Hummus",1050],
-["Pulpo a la gallega","Oktopus nach galizischer Art mit Kartoffeln, Paprikapulver und Olivenöl",1590],
-["Buñuelos de Maruca con salsa de Pimiento asado","Lengfisch-Windbeutel, geröstete Paprika",1250],
-["Arroz de rebozuelos con alcachofas","Paella mit Pfifferlingen, Artischocken und frischen Kräutern",1590],
-["Arroz de papada al vermút","Paella mit Schweinekinn und Wermutreduktion",1590],
-["Gambas al ajillo","Garnelen in Knoblauch",1390],
-["Chipirones frescos a la plancha","Frische kleine Tintenfische vom Grill · kleine Portion",990],
-["Chipirones frescos a la plancha","Frische kleine Tintenfische vom Grill · große Portion",2290],
-["Argentinisches Entrecôte","mit Kartoffeln und Salat",2790]],
-"klassiker": [
-["Ensalada mixta","Gemischter Salat · kleine Portion",790],
-["Tortilla de patatas","Spanisches Kartoffelomelett",590],
-["Queso de cabra, miel con chili, cebolla caramelizada","Ziegenkäsebällchen, karamellisierte Zwiebeln und Chili-Honig",590],
-["Patatas Bravas","oder All i Oli",620],
-["Patatas Bravas und All i Oli","mit beiden Soßen",620],
-["Ciruelas con bacon","Pflaumen im Speckmantel",590],
-["Chorizo picante frito","Gebratene scharfe Paprikawurst",680],
-["Olivas","",520],
-["Getrocknete Tomaten oder Kapern","",640],
-["Boquerones en vinagre","Sardellenfilets, in Olivenöl und Knoblauch eingelegt",760],
-["Jamón Serrano","Serrano-Schinken",850],
-["Plato de queso españoles","Spanische Käseplatte · kleine Portion",950],
-["Plato mixto","Schinken, Wurst, Käse und Oliven · kleine Portion",990],
-["Plato mixto","Schinken, Wurst, Käse und Oliven · große Portion",2490],
-["Postre – Dessert","Hausgemachte Crema Catalana",590],
-["Postre de la semana","Dessert der Woche",590]],
-"weisswein":[
-["Bujanda Blanco 2019 · D.O. Rioja","Viura · 0,2 l",680],
-["Blanco Nieva Sauvignon Blanc 2019 · D.O. Rueda","100 % Sauvignon Blanc · 0,2 l",720],
-["Vanidade 2019 · D.O. Rías Baixas","100 % Albariño · 0,2 l",820]],
-"rotwein":[
-["Egiarte Crianza 2016 · D.O. Navarra","Tempranillo, Merlot, Cabernet Sauvignon · 12 Monate Barrique · 0,2 l",740],
-["Lezaun Tempranillo 2019 · D.O. Navarra","100 % Tempranillo · 0,2 l",680],
-["Terrae Finca Vasallo 2019 · Bajo Aragón","100 % Garnacha · 0,2 l",720],
-["Nuestro 2018 · D.O. Ribera del Duero","100 % Tempranillo · 8 Monate französische Eiche · 0,2 l",990]]
-},
-"products":[
-{"id":"mejillones","name":"Mejillones en escabeche","category":"conservas","brand":"Agromar","description":"Miesmuscheln in Escabeche mit Apfelessig. Eine kleine Auswahl von der asturischen Küste.","pack":"110 g","amount":110,"unit":"g","price":1290,"case":0,"casePrice":0,"pickup":false,"source":"https://www.agromar.es/tienda/","note":"WEICHTIERE. Zutaten und Abtropfgewicht sind vor Verkauf vom Etikett zu übernehmen."},
-{"id":"oricios","name":"Caviar de oricios","category":"conservas","brand":"Agromar","description":"Seeigelrogen aus Asturien. Eine besondere kleine Konserve zum Teilen.","pack":"68 g","amount":68,"unit":"g","price":2690,"case":0,"casePrice":0,"pickup":false,"source":"https://www.agromar.es/producto/caviar-de-oricios-70/","note":"Vollständige Kennzeichnung, Zutaten und Lagerung vor Verkauf bestätigen."},
-{"id":"chorizo","name":"Chorizo asturiano extra","category":"embutidos","brand":"Embutidos Vallina","description":"Über Eichenholz geräucherte Schweinewurst. Zum Garen, nicht als verzehrfertiger Aufschnitt.","pack":"250 g","amount":250,"unit":"g","price":690,"case":0,"casePrice":0,"pickup":true,"source":"https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html","note":"Gekühlt bei 0–5 °C lagern und vor Verzehr garen. Im Entwurf nur Abholung."},
-{"id":"cecina","name":"Cecina loncheada","category":"embutidos","brand":"Cecinas Pablo","description":"Luftgetrocknetes Rindfleisch, fein geschnitten und in einer kleinen Portion verpackt.","pack":"100 g","amount":100,"unit":"g","price":890,"case":0,"casePrice":0,"pickup":true,"source":"https://cecinaspablo.com/producto/loncheado-de-cecina-curada-vacuno-100-gr/","note":"Im Entwurf nur Abholung; konkrete Lagerung und vollständiges Etikett noch bestätigen."},
-{"id":"bujanda-blanco","name":"Bujanda Blanco","year":"2019","category":"weisswein","brand":"D.O. Rioja","description":"Viura. Aus der bestehenden Weinkarte der Vinería.","pack":"0,75 l","amount":750,"unit":"ml","price":1290,"case":6,"casePrice":7350,"pickup":false},
-{"id":"blanco-nieva","name":"Blanco Nieva Sauvignon Blanc","year":"2019","category":"weisswein","brand":"D.O. Rueda","description":"100 % Sauvignon Blanc. Aus der bestehenden Weinkarte.","pack":"0,75 l","amount":750,"unit":"ml","price":1690,"case":6,"casePrice":9630,"pickup":false},
-{"id":"vanidade","name":"Vanidade","year":"2019","category":"weisswein","brand":"D.O. Rías Baixas","description":"100 % Albariño. Aus der bestehenden Weinkarte.","pack":"0,75 l","amount":750,"unit":"ml","price":1990,"case":6,"casePrice":11340,"pickup":false},
-{"id":"egiarte-crianza","name":"Egiarte Crianza","year":"2016","category":"rotwein","brand":"D.O. Navarra","description":"Tempranillo, Merlot und Cabernet Sauvignon. 12 Monate Barrique.","pack":"0,75 l","amount":750,"unit":"ml","price":1590,"case":6,"casePrice":9060,"pickup":false},
-{"id":"lezaun-tempranillo","name":"Lezaun Tempranillo","year":"2019","category":"rotwein","brand":"D.O. Navarra","description":"100 % Tempranillo. Aus der bestehenden Weinkarte.","pack":"0,75 l","amount":750,"unit":"ml","price":1390,"case":6,"casePrice":7920,"pickup":false},
-{"id":"terrae-finca-vasallo","name":"Terrae Finca Vasallo","year":"2019","category":"rotwein","brand":"Bajo Aragón","description":"100 % Garnacha. Aus der bestehenden Weinkarte.","pack":"0,75 l","amount":750,"unit":"ml","price":1490,"case":6,"casePrice":8490,"pickup":false},
-{"id":"nuestro","name":"Nuestro","year":"2018","category":"rotwein","brand":"D.O. Ribera del Duero","description":"100 % Tempranillo. 8 Monate in französischen Eichenfässern.","pack":"0,75 l","amount":750,"unit":"ml","price":2490,"case":6,"casePrice":14190,"pickup":false}
-],
-"map":"https://www.google.com/maps/place/Restaurant+Vineria+Del+Este/@52.5186994,13.464087,92m/data=!3m2!1e3!5s0x47a84e6198e1e723:0xedc45fa97ad4c2ae!4m15!1m8!3m7!1s0x47a84e61996e490d:0xa39a3db28d27a3d6!2sBänschstraße+41,+10247+Berlin-Bezirk+Friedrichshain-Kreuzberg!3b1!8m2!3d52.5187399!4d13.4644068!16s%2Fg%2F11c239j60n!3m5!1s0x47a84e61989fede3:0x991b34f6490b7bf4!8m2!3d52.5185729!4d13.4642961!16s%2Fg%2F1thkqqrb?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D"
+  "menu": {
+    "wochenkarte": [
+      [
+        "Coca de espinacas a la catalana con olivada",
+        "Blätterteiggebäck mit Spinat nach katalanischer Art",
+        650
+      ],
+      [
+        "Croquetas caseras",
+        "Tageskroketten",
+        690
+      ],
+      [
+        "Timbal de remolacha asada, queso de cabra y pesto de Rúcula",
+        "Gebackene Rote Bete, Ziegenkäse, Rucolapesto, Cashewkerne und Limetten",
+        920
+      ],
+      [
+        "Carrilleras de ternera",
+        "Langsam geschmorte Rinderbäckchen mit cremigem Kartoffel-Parmentier",
+        1350
+      ],
+      [
+        "Conejo al horno con mostaza",
+        "Kaninchen aus dem Ofen mit Senf-Zitrus-Soße und Hummus",
+        1050
+      ],
+      [
+        "Pulpo a la gallega",
+        "Oktopus nach galizischer Art mit Kartoffeln, Paprikapulver und Olivenöl",
+        1590
+      ],
+      [
+        "Buñuelos de Maruca con salsa de Pimiento asado",
+        "Lengfisch-Windbeutel, geröstete Paprika",
+        1250
+      ],
+      [
+        "Arroz de rebozuelos con alcachofas",
+        "Paella mit Pfifferlingen, Artischocken und frischen Kräutern",
+        1590
+      ],
+      [
+        "Arroz de papada al vermút",
+        "Paella mit Schweinekinn und Wermutreduktion",
+        1590
+      ],
+      [
+        "Gambas al ajillo",
+        "Garnelen in Knoblauch",
+        1390
+      ],
+      [
+        "Chipirones frescos a la plancha",
+        "Frische kleine Tintenfische vom Grill · kleine Portion",
+        990
+      ],
+      [
+        "Chipirones frescos a la plancha",
+        "Frische kleine Tintenfische vom Grill · große Portion",
+        2290
+      ],
+      [
+        "Argentinisches Entrecôte",
+        "mit Kartoffeln und Salat",
+        2790
+      ]
+    ],
+    "klassiker": [
+      [
+        "Ensalada mixta",
+        "Gemischter Salat · kleine Portion",
+        790
+      ],
+      [
+        "Tortilla de patatas",
+        "Spanisches Kartoffelomelett",
+        590
+      ],
+      [
+        "Queso de cabra, miel con chili, cebolla caramelizada",
+        "Ziegenkäsebällchen, karamellisierte Zwiebeln und Chili-Honig",
+        590
+      ],
+      [
+        "Patatas Bravas",
+        "oder All i Oli",
+        620
+      ],
+      [
+        "Patatas Bravas und All i Oli",
+        "mit beiden Soßen",
+        620
+      ],
+      [
+        "Ciruelas con bacon",
+        "Pflaumen im Speckmantel",
+        590
+      ],
+      [
+        "Chorizo picante frito",
+        "Gebratene scharfe Paprikawurst",
+        680
+      ],
+      [
+        "Olivas",
+        "",
+        520
+      ],
+      [
+        "Getrocknete Tomaten oder Kapern",
+        "",
+        640
+      ],
+      [
+        "Boquerones en vinagre",
+        "Sardellenfilets, in Olivenöl und Knoblauch eingelegt",
+        760
+      ],
+      [
+        "Jamón Serrano",
+        "Serrano-Schinken",
+        850
+      ],
+      [
+        "Plato de queso españoles",
+        "Spanische Käseplatte · kleine Portion",
+        950
+      ],
+      [
+        "Plato mixto",
+        "Schinken, Wurst, Käse und Oliven · kleine Portion",
+        990
+      ],
+      [
+        "Plato mixto",
+        "Schinken, Wurst, Käse und Oliven · große Portion",
+        2490
+      ],
+      [
+        "Postre – Dessert",
+        "Hausgemachte Crema Catalana",
+        590
+      ],
+      [
+        "Postre de la semana",
+        "Dessert der Woche",
+        590
+      ]
+    ],
+    "weisswein": [
+      [
+        "Bujanda Blanco 2019 · D.O. Rioja",
+        "Viura · 0,2 l",
+        680
+      ],
+      [
+        "Blanco Nieva Sauvignon Blanc 2019 · D.O. Rueda",
+        "100 % Sauvignon Blanc · 0,2 l",
+        720
+      ],
+      [
+        "Vanidade 2019 · D.O. Rías Baixas",
+        "100 % Albariño · 0,2 l",
+        820
+      ]
+    ],
+    "rotwein": [
+      [
+        "Egiarte Crianza 2016 · D.O. Navarra",
+        "Tempranillo, Merlot, Cabernet Sauvignon · 12 Monate Barrique · 0,2 l",
+        740
+      ],
+      [
+        "Lezaun Tempranillo 2019 · D.O. Navarra",
+        "100 % Tempranillo · 0,2 l",
+        680
+      ],
+      [
+        "Terrae Finca Vasallo 2019 · Bajo Aragón",
+        "100 % Garnacha · 0,2 l",
+        720
+      ],
+      [
+        "Nuestro 2018 · D.O. Ribera del Duero",
+        "100 % Tempranillo · 8 Monate französische Eiche · 0,2 l",
+        990
+      ]
+    ]
+  },
+  "products": [
+    {
+      "id": "mejillones",
+      "name": "Mejillones en escabeche",
+      "category": "conservas",
+      "brand": "Cabo de Peñas",
+      "description": "Miesmuscheln in Escabeche mit Apfelessig und Olivenöl. Die gezeigte Dose stammt aus Galicien.",
+      "pack": "111 g",
+      "amount": 111,
+      "unit": "g",
+      "price": 1290,
+      "case": 0,
+      "casePrice": 0,
+      "pickup": false,
+      "source": "https://www.agromar.es/tienda/",
+      "note": "WEICHTIERE. Zutaten und Abtropfgewicht sind vor Verkauf vom Etikett zu übernehmen.",
+      "image": "assets/products/mejillones.webp",
+      "imageAlt": "Cabo de Peñas · Mejillones en escabeche · Originalverpackung",
+      "imageSource": "https://www.fetasoller.com/es/mallorca-shop.php/tienda/catalogo/charcuteria_y_queso/marinos/cabo_de_penas_mejillones_cologicos",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "oricios",
+      "name": "Caviar de oricios",
+      "category": "conservas",
+      "brand": "Agromar",
+      "description": "Seeigelrogen aus Asturien. Eine besondere kleine Konserve zum Teilen.",
+      "pack": "68 g",
+      "amount": 68,
+      "unit": "g",
+      "price": 2690,
+      "case": 0,
+      "casePrice": 0,
+      "pickup": false,
+      "source": "https://www.agromar.es/producto/caviar-de-oricios-70/",
+      "note": "Vollständige Kennzeichnung, Zutaten und Lagerung vor Verkauf bestätigen.",
+      "image": "assets/products/oricios.webp",
+      "imageAlt": "Agromar · Caviar de oricios · Originaldose",
+      "imageSource": "https://laespanolameats.com/es/conservas-de-pescado/caviar-de-oricios-.html",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "chorizo",
+      "name": "Chorizo asturiano extra",
+      "category": "embutidos",
+      "brand": "Embutidos Vallina",
+      "description": "Über Eichenholz geräucherte Schweinewurst. Zum Garen, nicht als verzehrfertiger Aufschnitt.",
+      "pack": "250 g",
+      "amount": 250,
+      "unit": "g",
+      "price": 690,
+      "case": 0,
+      "casePrice": 0,
+      "pickup": true,
+      "source": "https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html",
+      "note": "Gekühlt bei 0–5 °C lagern und vor Verzehr garen. Im Entwurf nur Abholung.",
+      "image": "assets/products/chorizo.webp",
+      "imageAlt": "Embutidos Vallina · Chorizo asturiano extra · Originalverpackung",
+      "imageSource": "https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "cecina",
+      "name": "Cecina loncheada",
+      "category": "embutidos",
+      "brand": "Cecinas Pablo",
+      "description": "Luftgetrocknetes Rindfleisch, fein geschnitten und in einer kleinen Portion verpackt.",
+      "pack": "100 g",
+      "amount": 100,
+      "unit": "g",
+      "price": 890,
+      "case": 0,
+      "casePrice": 0,
+      "pickup": true,
+      "source": "https://cecinaspablo.com/producto/loncheado-de-cecina-curada-vacuno-100-gr/",
+      "note": "Im Entwurf nur Abholung; konkrete Lagerung und vollständiges Etikett noch bestätigen.",
+      "image": "assets/products/cecina.webp",
+      "imageAlt": "Cecinas Pablo · Cecina loncheada · Originalverpackung",
+      "imageSource": "https://www.montegomez.com/tienda-online/cecina-pablo/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "bujanda-blanco",
+      "name": "Bujanda Blanco",
+      "year": "2019",
+      "category": "weisswein",
+      "brand": "D.O. Rioja",
+      "description": "Viura. Aus der bestehenden Weinkarte der Vinería.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 1290,
+      "case": 6,
+      "casePrice": 7350,
+      "pickup": false,
+      "image": "assets/products/bujanda-blanco.webp",
+      "imageAlt": "Viña Bujanda Viura · Originalflasche",
+      "imageSource": "https://familiamartinezbujanda.com/tienda/vinos/blancos-y-dulces/vina-bujanda-viura/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "blanco-nieva",
+      "name": "Blanco Nieva Sauvignon Blanc",
+      "year": "2019",
+      "category": "weisswein",
+      "brand": "D.O. Rueda",
+      "description": "100 % Sauvignon Blanc. Aus der bestehenden Weinkarte.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 1690,
+      "case": 6,
+      "casePrice": 9630,
+      "pickup": false,
+      "image": "assets/products/blanco-nieva.webp",
+      "imageAlt": "Blanco Nieva Sauvignon Blanc · Originalflasche; Jahrgang der Abbildung kann abweichen",
+      "imageSource": "https://martue.com/producto/blanco-nieva-sauvignon-blanc-2025/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "vanidade",
+      "name": "Vanidade",
+      "year": "2019",
+      "category": "weisswein",
+      "brand": "D.O. Rías Baixas",
+      "description": "100 % Albariño. Aus der bestehenden Weinkarte.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 1990,
+      "case": 6,
+      "casePrice": 11340,
+      "pickup": false,
+      "image": "assets/products/vanidade.webp",
+      "imageAlt": "Vanidade Albariño · Originalflasche",
+      "imageSource": "https://vinaalmirante.com/en/vinos/vanidade-en/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "egiarte-crianza",
+      "name": "Egiarte Crianza",
+      "year": "2016",
+      "category": "rotwein",
+      "brand": "D.O. Navarra",
+      "description": "Tempranillo, Merlot und Cabernet Sauvignon. 12 Monate Barrique.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 1590,
+      "case": 6,
+      "casePrice": 9060,
+      "pickup": false,
+      "image": "assets/products/egiarte-crianza.webp",
+      "imageAlt": "Egiarte Crianza BIO · Produktfoto mit Originalflasche; Jahrgang kann abweichen",
+      "imageSource": "https://gaztaburua.com/product/egiarte-crianza-bio/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "lezaun-tempranillo",
+      "name": "Lezaun Tempranillo",
+      "year": "2019",
+      "category": "rotwein",
+      "brand": "D.O. Navarra",
+      "description": "100 % Tempranillo. Aus der bestehenden Weinkarte.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 1390,
+      "case": 6,
+      "casePrice": 7920,
+      "pickup": false,
+      "image": "assets/products/lezaun-tempranillo.webp",
+      "imageAlt": "Lezaun Tempranillo · Produktfoto mit Originalflasche; Jahrgang kann abweichen",
+      "imageSource": "https://gaztaburua.com/product/lezaun-tempranillo/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "terrae-finca-vasallo",
+      "name": "Terrae Finca Vasallo",
+      "year": "2019",
+      "category": "rotwein",
+      "brand": "Bajo Aragón",
+      "description": "100 % Garnacha. Aus der bestehenden Weinkarte.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 1490,
+      "case": 6,
+      "casePrice": 8490,
+      "pickup": false,
+      "image": "assets/products/terrae-finca-vasallo.webp",
+      "imageAlt": "Terrae Finca Vasallo · Produktaufnahme des Weinguts",
+      "imageSource": "https://www.bodegastempore.com/en/news/new-gold-medal-for-our-organic-wine-terrae-finca-vasallo-garnacha-100/",
+      "imageRights": "review_only_pending_clearance"
+    },
+    {
+      "id": "nuestro",
+      "name": "Nuestro",
+      "year": "2018",
+      "category": "rotwein",
+      "brand": "D.O. Ribera del Duero",
+      "description": "100 % Tempranillo. 8 Monate in französischen Eichenfässern.",
+      "pack": "0,75 l",
+      "amount": 750,
+      "unit": "ml",
+      "price": 2490,
+      "case": 6,
+      "casePrice": 14190,
+      "pickup": false,
+      "image": "assets/products/nuestro.webp",
+      "imageAlt": "Nuestro 8 meses · Originalflasche",
+      "imageSource": "https://www.vinetibo.es/products/nuestro-8-meses",
+      "imageRights": "review_only_pending_clearance"
+    }
+  ],
+  "map": "https://www.google.com/maps/place/Restaurant+Vineria+Del+Este/@52.5186994,13.464087,92m/data=!3m2!1e3!5s0x47a84e6198e1e723:0xedc45fa97ad4c2ae!4m15!1m8!3m7!1s0x47a84e61996e490d:0xa39a3db28d27a3d6!2sBänschstraße+41,+10247+Berlin-Bezirk+Friedrichshain-Kreuzberg!3b1!8m2!3d52.5187399!4d13.4644068!16s%2Fg%2F11c239j60n!3m5!1s0x47a84e61989fede3:0x991b34f6490b7bf4!8m2!3d52.5185729!4d13.4642961!16s%2Fg%2F1thkqqrb?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D"
 }

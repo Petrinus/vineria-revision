@@ -194,17 +194,21 @@
       "id": "mejillones",
       "name": "Mejillones en escabeche",
       "category": "conservas",
-      "brand": "Agromar",
-      "description": "Miesmuscheln in Escabeche mit Apfelessig. Eine kleine Auswahl von der asturischen Küste.",
-      "pack": "110 g",
-      "amount": 110,
+      "brand": "Cabo de Peñas",
+      "description": "Miesmuscheln in Escabeche mit Apfelessig und Olivenöl. Die gezeigte Dose stammt aus Galicien.",
+      "pack": "111 g",
+      "amount": 111,
       "unit": "g",
       "price": 1290,
       "case": 0,
       "casePrice": 0,
       "pickup": false,
       "source": "https://www.agromar.es/tienda/",
-      "note": "WEICHTIERE. Zutaten und Abtropfgewicht sind vor Verkauf vom Etikett zu übernehmen."
+      "note": "WEICHTIERE. Zutaten und Abtropfgewicht sind vor Verkauf vom Etikett zu übernehmen.",
+      "image": "assets/products/mejillones.webp",
+      "imageAlt": "Cabo de Peñas · Mejillones en escabeche · Originalverpackung",
+      "imageSource": "https://www.fetasoller.com/es/mallorca-shop.php/tienda/catalogo/charcuteria_y_queso/marinos/cabo_de_penas_mejillones_cologicos",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "oricios",
@@ -220,7 +224,11 @@
       "casePrice": 0,
       "pickup": false,
       "source": "https://www.agromar.es/producto/caviar-de-oricios-70/",
-      "note": "Vollständige Kennzeichnung, Zutaten und Lagerung vor Verkauf bestätigen."
+      "note": "Vollständige Kennzeichnung, Zutaten und Lagerung vor Verkauf bestätigen.",
+      "image": "assets/products/oricios.webp",
+      "imageAlt": "Agromar · Caviar de oricios · Originaldose",
+      "imageSource": "https://laespanolameats.com/es/conservas-de-pescado/caviar-de-oricios-.html",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "chorizo",
@@ -236,7 +244,11 @@
       "casePrice": 0,
       "pickup": true,
       "source": "https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html",
-      "note": "Gekühlt bei 0–5 °C lagern und vor Verzehr garen. Im Entwurf nur Abholung."
+      "note": "Gekühlt bei 0–5 °C lagern und vor Verzehr garen. Im Entwurf nur Abholung.",
+      "image": "assets/products/chorizo.webp",
+      "imageAlt": "Embutidos Vallina · Chorizo asturiano extra · Originalverpackung",
+      "imageSource": "https://puxa.es/chorizo-extra-asturiano/35-chorizo-extra-paq-250-g.html",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "cecina",
@@ -252,7 +264,11 @@
       "casePrice": 0,
       "pickup": true,
       "source": "https://cecinaspablo.com/producto/loncheado-de-cecina-curada-vacuno-100-gr/",
-      "note": "Im Entwurf nur Abholung; konkrete Lagerung und vollständiges Etikett noch bestätigen."
+      "note": "Im Entwurf nur Abholung; konkrete Lagerung und vollständiges Etikett noch bestätigen.",
+      "image": "assets/products/cecina.webp",
+      "imageAlt": "Cecinas Pablo · Cecina loncheada · Originalverpackung",
+      "imageSource": "https://www.montegomez.com/tienda-online/cecina-pablo/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "bujanda-blanco",
@@ -267,7 +283,11 @@
       "price": 1290,
       "case": 6,
       "casePrice": 7350,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/bujanda-blanco.webp",
+      "imageAlt": "Viña Bujanda Viura · Originalflasche",
+      "imageSource": "https://familiamartinezbujanda.com/tienda/vinos/blancos-y-dulces/vina-bujanda-viura/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "blanco-nieva",
@@ -282,7 +302,11 @@
       "price": 1690,
       "case": 6,
       "casePrice": 9630,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/blanco-nieva.webp",
+      "imageAlt": "Blanco Nieva Sauvignon Blanc · Originalflasche; Jahrgang der Abbildung kann abweichen",
+      "imageSource": "https://martue.com/producto/blanco-nieva-sauvignon-blanc-2025/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "vanidade",
@@ -297,7 +321,11 @@
       "price": 1990,
       "case": 6,
       "casePrice": 11340,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/vanidade.webp",
+      "imageAlt": "Vanidade Albariño · Originalflasche",
+      "imageSource": "https://vinaalmirante.com/en/vinos/vanidade-en/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "egiarte-crianza",
@@ -312,7 +340,11 @@
       "price": 1590,
       "case": 6,
       "casePrice": 9060,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/egiarte-crianza.webp",
+      "imageAlt": "Egiarte Crianza BIO · Produktfoto mit Originalflasche; Jahrgang kann abweichen",
+      "imageSource": "https://gaztaburua.com/product/egiarte-crianza-bio/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "lezaun-tempranillo",
@@ -327,7 +359,11 @@
       "price": 1390,
       "case": 6,
       "casePrice": 7920,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/lezaun-tempranillo.webp",
+      "imageAlt": "Lezaun Tempranillo · Produktfoto mit Originalflasche; Jahrgang kann abweichen",
+      "imageSource": "https://gaztaburua.com/product/lezaun-tempranillo/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "terrae-finca-vasallo",
@@ -342,7 +378,11 @@
       "price": 1490,
       "case": 6,
       "casePrice": 8490,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/terrae-finca-vasallo.webp",
+      "imageAlt": "Terrae Finca Vasallo · Produktaufnahme des Weinguts",
+      "imageSource": "https://www.bodegastempore.com/en/news/new-gold-medal-for-our-organic-wine-terrae-finca-vasallo-garnacha-100/",
+      "imageRights": "review_only_pending_clearance"
     },
     {
       "id": "nuestro",
@@ -357,7 +397,11 @@
       "price": 2490,
       "case": 6,
       "casePrice": 14190,
-      "pickup": false
+      "pickup": false,
+      "image": "assets/products/nuestro.webp",
+      "imageAlt": "Nuestro 8 meses · Originalflasche",
+      "imageSource": "https://www.vinetibo.es/products/nuestro-8-meses",
+      "imageRights": "review_only_pending_clearance"
     }
   ],
   "map": "https://www.google.com/maps/place/Restaurant+Vineria+Del+Este/@52.5186994,13.464087,92m/data=!3m2!1e3!5s0x47a84e6198e1e723:0xedc45fa97ad4c2ae!4m15!1m8!3m7!1s0x47a84e61996e490d:0xa39a3db28d27a3d6!2sBänschstraße+41,+10247+Berlin-Bezirk+Friedrichshain-Kreuzberg!3b1!8m2!3d52.5187399!4d13.4644068!16s%2Fg%2F11c239j60n!3m5!1s0x47a84e61989fede3:0x991b34f6490b7bf4!8m2!3d52.5185729!4d13.4642961!16s%2Fg%2F1thkqqrb?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D"

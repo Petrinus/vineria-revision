@@ -1,0 +1,24 @@
+{
+  "model": "08",
+  "new_models": 1,
+  "previous_models_preserved": true,
+  "pages": [
+    "entwuerfe/v08/checkout/index.html",
+    "entwuerfe/v08/index.html",
+    "entwuerfe/v08/service/index.html",
+    "entwuerfe/v08/shop/blanco-nieva/index.html",
+    "entwuerfe/v08/shop/bujanda-blanco/index.html",
+    "entwuerfe/v08/shop/cecina/index.html",
+    "entwuerfe/v08/shop/chorizo/index.html",
+    "entwuerfe/v08/shop/egiarte-crianza/index.html",
+    "entwuerfe/v08/shop/index.html",
+    "entwuerfe/v08/shop/lezaun-tempranillo/index.html",
+    "entwuerfe/v08/shop/mejillones/index.html",
+    "entwuerfe/v08/shop/nuestro/index.html",
+    "entwuerfe/v08/shop/oricios/index.html",
+    "entwuerfe/v08/shop/terrae-finca-vasallo/index.html",
+    "entwuerfe/v08/shop/vanidade/index.html",
+    "entwuerfe/v08/warenkorb/index.html"
+  ],
+  "uses_local_assets_only": true
+}

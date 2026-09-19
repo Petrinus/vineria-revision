@@ -75,5 +75,14 @@
     "accent": "#89354b",
     "soft": "#e6e9dd",
     "radius": "0"
+  },
+  {
+    "id": "v08",
+    "num": "08",
+    "title": "Collage & Papier",
+    "paper": "#eeeadd",
+    "ink": "#1c1b18",
+    "accent": "#29241f",
+    "radius": "0"
   }
 ]
