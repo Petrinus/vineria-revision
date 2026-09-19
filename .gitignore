@@ -1,0 +1,11 @@
+private/
+.env
+.env.*
+!.env.example
+*.log
+__pycache__/
+.pytest_cache/
+node_modules/
+server/local-settings.php
+site/verwaltung/index.php
+site/verwaltung/.htaccess
