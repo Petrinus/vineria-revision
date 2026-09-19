@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['design-lab/build.py', 'design-lab/lab.css', 'design-lab/ui.js', 'design-lab/qa.py', '.github/workflows/publish-design-lab.yml']
+    paths: ['design-lab/build.py', 'design-lab/lab.css', 'design-lab/ui.js', 'design-lab/qa.py', 'design-lab/refine.py', '.github/workflows/publish-design-lab.yml']
 permissions:
   contents: write
 concurrency:
@@ -20,7 +20,11 @@ jobs:
           python3 -m pip install --quiet pillow numpy beautifulsoup4 playwright
           python3 -m playwright install --with-deps chromium
       - name: Build the requested paired designs
-        run: python3 design-lab/build.py
+        run: |
+          python3 design-lab/build.py
+          if test -f design-lab/refine.py; then python3 design-lab/refine.py; fi
+      - name: Capture layout diagnostics
+        run: python3 design-lab/diagnose.py
       - name: Verify navigation, images, mobile and complete content
         run: python3 design-lab/qa.py
       - name: Commit verified public preview files
@@ -33,7 +37,19 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
-          git rev-parse HEAD > reports/design-lab/published-revision.txt
+      - name: Verify public delivery
+        run: python3 design-lab/verify_public.py
+      - name: Save verification reports only
+        if: always()
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add reports/design-lab
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record browser checks and reference comparison [skip ci]'
+            git -c rebase.autoStash=true pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
