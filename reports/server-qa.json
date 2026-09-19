@@ -1,0 +1,136 @@
+{
+  "checks": 26,
+  "passed": 20,
+  "failed": [
+    {
+      "check": "Shared site publication works",
+      "pass": false
+    },
+    {
+      "check": "Restaurant menu published",
+      "pass": false
+    },
+    {
+      "check": "Editorial menu also published",
+      "pass": false
+    },
+    {
+      "check": "New product has its own page",
+      "pass": false
+    },
+    {
+      "check": "Paired editorial product page exists",
+      "pass": false
+    },
+    {
+      "check": "Test execution completed without exception",
+      "pass": false
+    }
+  ],
+  "details": [
+    {
+      "check": "PHP syntax",
+      "pass": true
+    },
+    {
+      "check": "Two named accounts",
+      "pass": true
+    },
+    {
+      "check": "No plaintext initial password",
+      "pass": true
+    },
+    {
+      "check": "Private storage outside public root",
+      "pass": true
+    },
+    {
+      "check": "Initial password change required",
+      "pass": true
+    },
+    {
+      "check": "Unauthenticated login only",
+      "pass": true
+    },
+    {
+      "check": "Cookie HTTP-only",
+      "pass": true
+    },
+    {
+      "check": "CSRF rejection",
+      "pass": true
+    },
+    {
+      "check": "Wrong password refused",
+      "pass": true
+    },
+    {
+      "check": "Login then mandatory change",
+      "pass": true
+    },
+    {
+      "check": "Cannot edit before password change",
+      "pass": true
+    },
+    {
+      "check": "Wrong current password refused",
+      "pass": true
+    },
+    {
+      "check": "Individual password change succeeds",
+      "pass": true
+    },
+    {
+      "check": "Password change clears mandatory flag",
+      "pass": true
+    },
+    {
+      "check": "Foreign origin blocked",
+      "pass": true
+    },
+    {
+      "check": "Menu draft saved",
+      "pass": true
+    },
+    {
+      "check": "Price parsed to integer cents",
+      "pass": true
+    },
+    {
+      "check": "Draft did not publish itself",
+      "pass": true
+    },
+    {
+      "check": "Old revision rejected",
+      "pass": true
+    },
+    {
+      "check": "Product added in form",
+      "pass": true
+    },
+    {
+      "check": "Shared site publication works",
+      "pass": false
+    },
+    {
+      "check": "Restaurant menu published",
+      "pass": false
+    },
+    {
+      "check": "Editorial menu also published",
+      "pass": false
+    },
+    {
+      "check": "New product has its own page",
+      "pass": false
+    },
+    {
+      "check": "Paired editorial product page exists",
+      "pass": false
+    },
+    {
+      "check": "Test execution completed without exception",
+      "pass": false
+    }
+  ]
+}
