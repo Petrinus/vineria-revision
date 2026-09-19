@@ -1,0 +1,84 @@
+{
+  "checks": 19,
+  "passed": 19,
+  "failed": [],
+  "details": [
+    {
+      "check": "Overview first, no winner",
+      "pass": true
+    },
+    {
+      "check": "All published pairs represented",
+      "pass": true
+    },
+    {
+      "check": "fanzine restaurant shop and management links",
+      "pass": true
+    },
+    {
+      "check": "fanzine two homepages visible",
+      "pass": true
+    },
+    {
+      "check": "fanzine consistent paired background",
+      "pass": true
+    },
+    {
+      "check": "fanzine all three visible",
+      "pass": true
+    },
+    {
+      "check": "editorial restaurant shop and management links",
+      "pass": true
+    },
+    {
+      "check": "editorial two homepages visible",
+      "pass": true
+    },
+    {
+      "check": "editorial consistent paired background",
+      "pass": true
+    },
+    {
+      "check": "editorial all three visible",
+      "pass": true
+    },
+    {
+      "check": "Independent shared management",
+      "pass": true
+    },
+    {
+      "check": "Menu management homepage usable",
+      "pass": true
+    },
+    {
+      "check": "Demo never claims publication",
+      "pass": true
+    },
+    {
+      "check": "No password requested in public demo",
+      "pass": true
+    },
+    {
+      "check": "No portal overflow 1440",
+      "pass": true
+    },
+    {
+      "check": "No portal overflow 390",
+      "pass": true
+    },
+    {
+      "check": "No portal overflow 320",
+      "pass": true
+    },
+    {
+      "check": "No POST requests",
+      "pass": true
+    },
+    {
+      "check": "No JavaScript exceptions",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

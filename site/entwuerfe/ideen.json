@@ -1,0 +1,27 @@
+{
+  "selected": null,
+  "ranking": false,
+  "management": "../verwaltung/vorschau.html",
+  "ideas": [
+    {
+      "id": "fanzine",
+      "label": "06A",
+      "name": "Fanzine · Papier & Schwarz",
+      "summary": "Fotokopie und unregelmäßige Bildkanten. Restaurant und Tienda bilden ein zusammengehörendes Designpaar.",
+      "restaurant": "../index.html",
+      "shop": "../shop/index.html",
+      "previewRestaurant": "../assets/portal-fanzine-restaurant.jpg",
+      "previewShop": "../assets/portal-fanzine-shop.jpg"
+    },
+    {
+      "id": "editorial",
+      "label": "06B",
+      "name": "Editorial · Creme & Wein",
+      "summary": "Warme Farben, ruhige Typografie und mehr fotografische Fläche. Dieselbe Formensprache in Restaurant und Tienda.",
+      "restaurant": "../editorial/index.html",
+      "shop": "../editorial/shop/index.html",
+      "previewRestaurant": "../assets/portal-editorial-restaurant.jpg",
+      "previewShop": "../assets/portal-editorial-shop.jpg"
+    }
+  ]
+}
