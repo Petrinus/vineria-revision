@@ -1,0 +1,22 @@
+{
+  "revision": "9980507166b0c3edf0d207cd9ab39cb6e1fd6cb1",
+  "checks": [
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/9980507166b0c3edf0d207cd9ab39cb6e1fd6cb1/site/index.html",
+      "status": 200,
+      "matching_elements": 8
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/9980507166b0c3edf0d207cd9ab39cb6e1fd6cb1/site/verwaltung/instagram-auswahl.html",
+      "status": 200,
+      "matching_elements": 6
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/9980507166b0c3edf0d207cd9ab39cb6e1fd6cb1/site/entwuerfe/v08/index.html",
+      "status": 200,
+      "matching_elements": 1,
+      "selected_photo_count": 6
+    }
+  ],
+  "verified": true
+}
