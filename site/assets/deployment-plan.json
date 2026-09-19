@@ -1,0 +1,17 @@
+{
+  "review_mode": true,
+  "intended_production_domain": "https://vineriaytapas.de",
+  "routes": {
+    "/": "Restaurant",
+    "/shop/": "Independent shop homepage",
+    "/shop/<product>/": "Product landing pages",
+    "/verwaltung/": "PHP authenticated management; not active on GitHub/CDN"
+  },
+  "legacy_anchors": {
+    "mod-100": "vineria",
+    "mod-101": "speisekarte",
+    "mod-151": "speisekarte",
+    "mod-102": "besuch"
+  },
+  "indexing": "Review pages remain noindex; remove only after operator, content, image rights, product labels and checkout are approved."
+}
