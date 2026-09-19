@@ -1,0 +1,192 @@
+{
+  "source_sha256": "b6ea7e56fec850dc32d7b34381bc1e6e89582b6ae7d4e2cef9aabadee01b547d",
+  "source_size": [
+    1217,
+    1280
+  ],
+  "composition_size": [
+    1217,
+    1280
+  ],
+  "crops": {
+    "wordmark": [
+      0,
+      0,
+      256,
+      145
+    ],
+    "navigation": [
+      256,
+      0,
+      1217,
+      110
+    ],
+    "left-collage": [
+      0,
+      145,
+      603,
+      868
+    ],
+    "headline": [
+      604,
+      172,
+      898,
+      564
+    ],
+    "intro-copy": [
+      618,
+      570,
+      870,
+      661
+    ],
+    "menu-button": [
+      624,
+      674,
+      854,
+      725
+    ],
+    "reservation-button": [
+      624,
+      732,
+      854,
+      786
+    ],
+    "bottle": [
+      900,
+      110,
+      1217,
+      485
+    ],
+    "tienda-note": [
+      918,
+      484,
+      1147,
+      640
+    ],
+    "salud": [
+      874,
+      640,
+      1007,
+      731
+    ],
+    "facade": [
+      1007,
+      640,
+      1217,
+      868
+    ],
+    "feature-restaurant": [
+      0,
+      868,
+      447,
+      1086
+    ],
+    "feature-menu": [
+      447,
+      868,
+      761,
+      1086
+    ],
+    "feature-shop": [
+      761,
+      868,
+      1217,
+      1086
+    ],
+    "olives": [
+      269,
+      919,
+      438,
+      1064
+    ],
+    "herbs": [
+      601,
+      920,
+      759,
+      1066
+    ],
+    "tin": [
+      989,
+      934,
+      1185,
+      1065
+    ],
+    "footer": [
+      0,
+      1086,
+      1217,
+      1280
+    ]
+  },
+  "text_style": "Printed lettering and artwork are literal source crops; editable copy uses system serif and sans-serif fonts",
+  "exceptions": [
+    "Real contact details replace placeholder information in the reference footer",
+    "Mobile layout rearranges extracted pieces for readability"
+  ],
+  "graphics": [
+    {
+      "name": "wine-shelf",
+      "post": "DSDZcT3DI2I",
+      "color": "wine-shelf-color.webp",
+      "monochrome": "wine-shelf-copy.webp",
+      "illustration_not_photo": true
+    },
+    {
+      "name": "asparagus",
+      "post": "DKU9PzaMm1w",
+      "color": "asparagus-color.webp",
+      "monochrome": "asparagus-copy.webp",
+      "illustration_not_photo": true
+    },
+    {
+      "name": "octopus",
+      "post": "Ckbmq6yMEWS",
+      "color": "octopus-color.webp",
+      "monochrome": "octopus-copy.webp",
+      "illustration_not_photo": true
+    },
+    {
+      "name": "prawns",
+      "post": "CgpJbcXjyWV",
+      "color": "prawns-color.webp",
+      "monochrome": "prawns-copy.webp",
+      "illustration_not_photo": true
+    },
+    {
+      "name": "paella",
+      "post": "BuzCKLOho7i",
+      "color": "paella-color.webp",
+      "monochrome": "paella-copy.webp",
+      "illustration_not_photo": true
+    },
+    {
+      "name": "dessert",
+      "post": "BvhPAb1HqoM",
+      "color": "dessert-color.webp",
+      "monochrome": "dessert-copy.webp",
+      "illustration_not_photo": true
+    }
+  ],
+  "owner": {
+    "source_sha256": "bde7fa5691d4f79e6ffbe1dadaa76b1be69ec1de42df6ee79cfeef1e8f6b3001",
+    "segmentation_only": true,
+    "face_regenerated": false,
+    "bbox": [
+      982,
+      338,
+      1463,
+      1091
+    ]
+  },
+  "portrait": {
+    "source_sha256": "e4c62e30225cad4e1f5bcd85f8d78a15a1e34986b502b581944489b0a403a633",
+    "segmentation_only": true,
+    "face_regenerated": false,
+    "bbox": [
+      195,
+      245,
+      744,
+      974
+    ]
+  }
+}
