@@ -1,0 +1,27 @@
+{
+  "revision": "076e1b4c119477c3f2a63604e887b40e3bd0c20b",
+  "pages": [
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/076e1b4c119477c3f2a63604e887b40e3bd0c20b/site/index.html",
+      "status": 200,
+      "title": "Vineria del Este · Entwürfe zur Auswahl",
+      "matching_elements": 8,
+      "confirmation_screen": false
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/076e1b4c119477c3f2a63604e887b40e3bd0c20b/site/entwuerfe/v08/index.html",
+      "status": 200,
+      "title": "Vineria del Este · Tapas, Wein & Tienda in Berlin · Collage & Papier",
+      "matching_elements": 1,
+      "confirmation_screen": false
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/076e1b4c119477c3f2a63604e887b40e3bd0c20b/site/entwuerfe/v08/shop/index.html",
+      "status": 200,
+      "title": "Spanische Spezialitäten & Wein · Vineria del Este Tienda · Modell 08 · Collage & Papier",
+      "matching_elements": 11,
+      "confirmation_screen": false
+    }
+  ],
+  "verified": true
+}
