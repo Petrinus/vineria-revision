@@ -23,28 +23,30 @@ jobs:
         run: python3 tools/product_photos.py
       - name: Check photographs in the seven existing shops
         run: python3 tools/qa_product_photos.py
-      - name: Build the separately requested model 08
+      - name: Update the independent model 08 in place
         run: python3 tools/build_model08.py
       - name: Capture model 08 restaurant and shop
         run: |
           python3 -m playwright screenshot --viewport-size="1440,1000" --full-page --wait-for-timeout=1600 "file://$PWD/site/entwuerfe/v08/index.html" reports/model08/restaurant.png
           python3 -m playwright screenshot --viewport-size="1440,1000" --full-page --wait-for-timeout=1600 "file://$PWD/site/entwuerfe/v08/shop/index.html" reports/model08/shop.png
           python3 -m playwright screenshot --viewport-size="390,1000" --full-page --wait-for-timeout=1000 "file://$PWD/site/entwuerfe/v08/index.html" reports/model08/mobile.png
-      - name: Refresh the new model thumbnails and verify the selector
+      - name: Refresh all shop previews and verify the selector
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from PIL import Image
           from bs4 import BeautifulSoup
           import json
-          for area in ['restaurant','shop']:
-              image=Image.open('reports/model08/'+area+'.png').convert('RGB')
+          captures=[('reports/model08/'+area+'.png','v08-'+area) for area in ['restaurant','shop']]
+          captures += [('reports/product-photos/'+model+'-shop.png',model+'-shop') for model in ['v1','v2','v3','v4','v5','v6a','v6b']]
+          for source,name in captures:
+              image=Image.open(source).convert('RGB')
               image=image.crop((0,0,image.width,min(image.height,1000)))
               image.thumbnail((720,500))
-              image.save('site/assets/proposals/v08-'+area+'.webp',quality=88)
+              image.save('site/assets/proposals/'+name+'.webp',quality=88)
           portal=BeautifulSoup(Path('site/index.html').read_text(),'html.parser')
-          assert len(portal.select('[data-proposal]'))==8
-          assert len(portal.select('[data-proposal="v08"]'))==1
+          ids=[c['data-proposal'] for c in portal.select('[data-proposal]')]
+          assert len(ids)==8 and set(ids)=={'v1','v2','v3','v4','v5','v6a','v6b','v08'}
           home=BeautifulSoup(Path('site/entwuerfe/v08/index.html').read_text(),'html.parser')
           count=len(home.select('.menu-section article.dish'))
           expected=sum(len(rows) for rows in json.loads(Path('site/assets/catalog.json').read_text())['menu'].values())
@@ -52,7 +54,10 @@ jobs:
           assert home.select_one('.photo-stack') and home.select_one('.shop-slip')
           assert home.select_one('[data-events-form]')
           assert not home.select('.scene-star')
-          Path('reports/model08/structure.json').write_text(json.dumps({'models':8,'model08_menu_items':count,'previous_models_kept':True,'events_form':True,'static_checks_passed':True},indent=2))
+          shop=BeautifulSoup(Path('site/entwuerfe/v08/shop/index.html').read_text(),'html.parser')
+          assert len(shop.select('.product-card'))==11
+          assert len(shop.select('.product-card .photo-wine img[data-real-product]'))>=6
+          Path('reports/model08/structure.json').write_text(json.dumps({'models':ids,'model08_menu_items':count,'model08_wine_photos':len(shop.select('.product-card .photo-wine img[data-real-product]')),'previous_models_kept':True,'events_form':True,'static_checks_passed':True},indent=2))
           PY
       - name: Publish the reviewed files
         run: |
@@ -60,11 +65,44 @@ jobs:
           git config user.email '151435441+Petrinus@users.noreply.github.com'
           git add site src/catalog.json reports/product-photos reports/model08
           if ! git diff --cached --quiet; then
-            git commit -m 'Add independent model 08 and real product photos across all shop styles [skip ci]'
+            git commit -m 'Update model 08 and the actual-product previews in all shop designs [skip ci]'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
           git rev-parse HEAD > reports/model08/published-revision.txt
+      - name: Check the three public review URLs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from bs4 import BeautifulSoup
+          import json
+          sha=Path('reports/model08/published-revision.txt').read_text().strip()
+          base='https://rawcdn.githack.com/Petrinus/vineria-revision/'+sha+'/site/'
+          result={'revision':sha,'pages':[]}
+          for route,selector in [('index.html','[data-proposal]'),('entwuerfe/v08/index.html','.collage-hero'),('entwuerfe/v08/shop/index.html','.product-card')]:
+              row={'url':base+route}
+              try:
+                  with urlopen(Request(base+route,headers={'User-Agent':'Mozilla/5.0'}),timeout=35) as response:
+                      row['status']=response.status
+                      soup=BeautifulSoup(response.read().decode('utf-8'),'html.parser')
+                  row['title']=soup.title.get_text() if soup.title else ''
+                  row['matching_elements']=len(soup.select(selector))
+                  row['confirmation_screen']=bool(soup.find('button',string='Open the page'))
+              except Exception as exc:row['error']=str(exc)
+              result['pages'].append(row)
+          result['verified']=all(p.get('status')==200 and p.get('matching_elements',0)>0 for p in result['pages'])
+          Path('reports/model08/public-access.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          print(json.dumps(result,ensure_ascii=False,indent=2))
+          PY
+      - name: Save the public access report
+        run: |
+          git add reports/model08/public-access.json reports/model08/published-revision.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record model 08 review URL verification [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
