@@ -1,0 +1,54 @@
+{
+  "revision": "20be09c128559d95292b09811e016c8f1cbfb59a",
+  "pages": [
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/20be09c128559d95292b09811e016c8f1cbfb59a/site/index.html",
+      "expected": 10,
+      "status": 200,
+      "matching_elements": 10,
+      "title": "Vineria del Este · Entwürfe zur Auswahl",
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/20be09c128559d95292b09811e016c8f1cbfb59a/site/entwuerfe/v09/index.html",
+      "expected": 1,
+      "status": 200,
+      "matching_elements": 1,
+      "title": "Vineria del Este · Restaurant · Modell 09 · Punk & Farbe",
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/20be09c128559d95292b09811e016c8f1cbfb59a/site/entwuerfe/v09/shop/index.html",
+      "expected": 1,
+      "status": 200,
+      "matching_elements": 1,
+      "title": "Vineria del Este · Tienda & Service · Modell 09 · Punk & Farbe",
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/20be09c128559d95292b09811e016c8f1cbfb59a/site/entwuerfe/v10/index.html",
+      "expected": 1,
+      "status": 200,
+      "matching_elements": 1,
+      "title": "Vineria del Este · Restaurant · Modell 10 · Die Bildvorlage",
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/20be09c128559d95292b09811e016c8f1cbfb59a/site/entwuerfe/v10/shop/index.html",
+      "expected": 1,
+      "status": 200,
+      "matching_elements": 1,
+      "title": "Vineria del Este · Tienda & Service · Modell 10 · Die Bildvorlage",
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/20be09c128559d95292b09811e016c8f1cbfb59a/site/verwaltung/vorschau.html",
+      "expected": 1,
+      "status": 200,
+      "matching_elements": 1,
+      "title": "Vinería del Este · Gemeinsame Verwaltung",
+      "verified": true
+    }
+  ],
+  "verified": true
+}
