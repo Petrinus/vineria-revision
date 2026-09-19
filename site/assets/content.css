@@ -10,3 +10,8 @@
 @media(max-width:720px){body[data-vde-style="v2"] .nav,body[data-vde-style="v3"] .nav,body[data-vde-style="v4"] .nav{flex-wrap:wrap;justify-content:space-between;padding-block:13px;gap:10px}body[data-vde-style="v2"] .navlinks,body[data-vde-style="v3"] .navlinks,body[data-vde-style="v4"] .navlinks{max-width:100%;flex-wrap:wrap;gap:10px}body[data-vde-style="v2"] .original-brand,body[data-vde-style="v3"] .original-brand,body[data-vde-style="v4"] .original-brand{width:190px!important;max-width:100%!important}}
 .model08 .statement{width:calc(100% - 32px);margin-inline:16px}.model08 .intro:has(.dish-print){position:relative;padding-bottom:100px}.model08 .intro>.dish-print{position:absolute;right:15px;bottom:0;width:145px;max-height:145px}
 .model08 .collage-hero:before{inset:-30px 0 -25px}
+
+/* Six user-selected originals, same gallery and the existing design palette. */
+.live-instagram-grid[data-photo-count="6"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.live-instagram-accounts{display:flex;flex-direction:column;align-items:flex-end;gap:8px;font:12px/1.6 Arial,sans-serif;margin-bottom:22px}
+@media(max-width:720px){.live-instagram-grid[data-photo-count="6"]{grid-template-columns:repeat(2,minmax(0,1fr))}.live-instagram-accounts{align-items:flex-start}}

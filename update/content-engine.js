@@ -7,6 +7,12 @@
  const money=v=>(Number(v||0)/100).toLocaleString('de-DE',{style:'currency',currency:'EUR'});
  let data=clone(cfg.content);
  try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved?.schema===3&&Array.isArray(saved.sections)&&Array.isArray(saved.products)&&saved.news&&saved.instagram)data=saved;}catch{}
+
+ // User-selected Instagram set: refresh only gallery assets, not other local content.
+ const approvedGallery=cfg.content.instagram;
+ if(approvedGallery?.selection_id&&data.instagram.selection_id!==approvedGallery.selection_id){
+   data.instagram={...data.instagram,selection_id:approvedGallery.selection_id,items:clone(approvedGallery.items),count:approvedGallery.count,connected:false,display_mode:'curated_local_selection'};
+ }
  function url(value){if(!value)return '';if(/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value))return value;try{const u=new URL(value,root);return ['http:','https:'].includes(u.protocol)||u.protocol==='file:'&&location.protocol==='file:'?u.href:'';}catch{return '';}}
  function active(p){return p.visible!==false;}
  function detail(p){return new URL('produkt/index.html?id='+encodeURIComponent(p.id),shop).href;}
@@ -20,7 +26,17 @@
  buttons.forEach((b,i)=>{b.onclick=()=>choose(i);b.onkeydown=e=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;e.preventDefault();choose(e.key==='Home'?0:e.key==='End'?buttons.length-1:(i+(e.key==='ArrowRight'?1:buttons.length-1))%buttons.length,true);};});choose(0);
  }
  function extras(){const news=document.querySelector('[data-live-news]');if(news){const now=Date.now(),items=data.news.items.filter(n=>active(n)&&(!n.starts||Date.parse(n.starts)<=now)&&(!n.ends||Date.parse(n.ends)>now)).slice(0,data.news.limit);news.hidden=!data.news.enabled||!items.length;news.innerHTML='<p class="eyebrow">Aktuelles aus der Vineria</p><div class="live-news-grid">'+items.map(n=>`<article class="live-news-card ${n.image?'':'text-only'}">${url(n.image)?`<img src="${esc(url(n.image))}" alt="${esc(n.imageAlt||n.title)}" loading="eager">`:''}<div>${n.example?'<small>GESTALTUNGSBEISPIEL · kein bestätigter Termin</small>':''}<h3>${esc(n.title)}</h3><p>${esc(n.text).replace(/\n/g,'<br>')}</p>${n.link&&url(n.link)?`<a href="${esc(url(n.link))}" rel="noopener">${esc(n.linkLabel||'Mehr erfahren')} ↗</a>`:''}</div></article>`).join('')+'</div>';}
- const ig=document.querySelector('[data-live-instagram]');if(ig){ig.hidden=!data.instagram.enabled;ig.innerHTML='<div class="live-instagram-head"><div><p class="eyebrow">Einblicke</p><h2>Die Vineria in Bildern.</h2></div><a href="https://www.instagram.com/vineria.del.este/" target="_blank" rel="noopener noreferrer">@vineria.del.este ↗</a></div><div class="live-instagram-grid">'+data.instagram.items.slice(0,data.instagram.count).map(x=>`<a href="https://www.instagram.com/vineria.del.este/" target="_blank" rel="noopener noreferrer"><img src="${esc(url(x.image))}" alt="${esc(x.alt)}" loading="lazy"></a>`).join('')+'</div><p class="live-note">Galerievorschau mit eigenen Bildern. Noch kein automatisch verbundener Instagram-Feed. Es werden keine Bilder doppelt eingesetzt.</p>';}}
+
+ const ig=document.querySelector('[data-live-instagram]');
+ if(ig){
+  ig.hidden=!data.instagram.enabled;
+  const rows=data.instagram.items.slice(0,data.instagram.count);
+  const sourceLink=x=>{try{const u=new URL(x.permalink);return ['www.instagram.com','instagram.com'].includes(u.hostname)&&u.protocol==='https:'?u.href:'https://www.instagram.com/'+encodeURIComponent(x.account||'vineria.del.este')+'/';}catch{return 'https://www.instagram.com/vineria.del.este/';}};
+  ig.innerHTML='<div class="live-instagram-head"><div><p class="eyebrow">Einblicke</p><h2>Die Vineria in Bildern.</h2></div><div class="live-instagram-accounts"><a href="https://www.instagram.com/vineria.del.este/" target="_blank" rel="noopener noreferrer">@vineria.del.este ↗</a><a href="https://www.instagram.com/vineriadeleste/" target="_blank" rel="noopener noreferrer">@vineriadeleste ↗</a></div></div>'
+   +'<div class="live-instagram-grid" data-photo-count="'+rows.length+'">'+rows.map(x=>'<a data-selected-instagram="'+esc(x.id||'')+'" href="'+esc(sourceLink(x))+'" target="_blank" rel="noopener noreferrer"><img src="'+esc(url(x.image))+'" alt="'+esc(x.alt)+'" loading="lazy"></a>').join('')+'</div>'
+   +'<p class="live-note">Ausgewählte Originalaufnahmen aus beiden Instagram-Profilen. Jeder Bildlink führt zum zugehörigen Beitrag. Diese Auswahl ist lokal gespeichert; noch kein automatisch aktualisierter Instagram-Feed.</p>';
+ }
+}
  function storefront(){if(!window.VDE)return;window.VDE.products=data.products.filter(active);const grid=document.querySelector('.products');if(grid){grid.innerHTML=window.VDE.products.map(card).join('');const filters=document.querySelector('.filters');if(filters){const cats=[...new Set(window.VDE.products.map(p=>p.category))],labels={conservas:'Konserven',embutidos:'Wurst & Cecina',weisswein:'Weißwein',rotwein:'Rotwein'};filters.innerHTML='<button data-filter="all" aria-pressed="true">Alles</button>'+cats.map(x=>`<button data-filter="${esc(x)}" aria-pressed="false">${esc(labels[x]||x)}</button>`).join('');}}
  const holder=document.querySelector('[data-live-product]');if(holder){const id=new URLSearchParams(location.search).get('id')||cfg.product;const p=data.products.find(x=>x.id===id&&active(x));holder.innerHTML=p?`<div class="product-art real-product-photo ${p.unit==='ml'?'photo-wine':'photo-pack'}">${photo(p)}</div><div data-product="${esc(p.id)}"><p class="eyebrow">${esc(p.brand)}</p><h1>${esc(p.name)}</h1><p>${esc(p.description)}</p>${buy(p)}<p class="live-note">${esc(p.note||'Kennzeichnung und Verfügbarkeit vor Verkaufsstart bestätigen.')}</p></div>`:`<section><h1>Zurzeit nicht verfügbar.</h1><a class="btn" href="${esc(shop.href)}">Zur Tienda</a></section>`;}}
  function save(next){localStorage.setItem(KEY,JSON.stringify(next));data=clone(next);window.dispatchEvent(new CustomEvent('vde:content-change'));}

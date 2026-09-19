@@ -528,25 +528,65 @@
   },
   "instagram": {
     "enabled": true,
-    "count": 4,
+    "count": 6,
     "connected": false,
     "items": [
       {
-        "image": "assets/terrasse.webp",
-        "alt": "Vor der Vineria"
+        "id": "DSDZcT3DI2I",
+        "image": "assets/instagram-selected/DSDZcT3DI2I.webp",
+        "alt": "Wein & Tapas · Vineria del Este",
+        "permalink": "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "account": "vineria.del.este",
+        "source": "user_selected_instagram_post",
+        "source_sha256": "fdcad8cccbceccc04c7be029b55416d25c250c171fc53fdfe793ad5d15512fca"
       },
       {
-        "image": "assets/bar.webp",
-        "alt": "An der Bar"
+        "id": "DKU9PzaMm1w",
+        "image": "assets/instagram-selected/DKU9PzaMm1w.webp",
+        "alt": "Weißer Spargel mit Oliven, getrockneten Tomaten und Kapernvinaigrette",
+        "permalink": "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "account": "vineria.del.este",
+        "source": "user_selected_instagram_post",
+        "source_sha256": "585e98a453b061541895955c0a133082a553bf6444d89160c289bf14f1c202d8"
       },
       {
-        "image": "assets/photo-4b6ccc01af.webp",
-        "alt": "Kichererbsensalat"
+        "id": "Ckbmq6yMEWS",
+        "image": "assets/instagram-selected/Ckbmq6yMEWS.webp",
+        "alt": "Gegrillter Oktopus mit Apfel-Kartoffel-Püree",
+        "permalink": "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "account": "vineria.del.este",
+        "source": "user_selected_instagram_post",
+        "source_sha256": "b259647ea7bdb1e1868b64fde990865fb135f2c7f78c6c5d5ff7cdcee993d5d1"
       },
       {
-        "image": "assets/portrait.webp",
-        "alt": "Ein Moment aus der Vineria"
+        "id": "CgpJbcXjyWV",
+        "image": "assets/instagram-selected/CgpJbcXjyWV.webp",
+        "alt": "Sommergrill · Vineria del Este",
+        "permalink": "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "account": "vineria.del.este",
+        "source": "user_selected_instagram_post",
+        "source_sha256": "ddc77b4d859536075c15195a35ccedada5a22dfb8d7b28a33f620308c89fec1d"
+      },
+      {
+        "id": "BuzCKLOho7i",
+        "image": "assets/instagram-selected/BuzCKLOho7i.webp",
+        "alt": "Ausgewählte Aufnahme aus @vineriadeleste · 9. März 2019",
+        "permalink": "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "account": "vineriadeleste",
+        "source": "user_selected_instagram_post",
+        "source_sha256": "9abb2c1d15cad6b79e0eb8a175e278b8839d759d8bb9df229fd7a1f332162bc8"
+      },
+      {
+        "id": "BvhPAb1HqoM",
+        "image": "assets/instagram-selected/BvhPAb1HqoM.webp",
+        "alt": "Ausgewählte Aufnahme aus @vineriadeleste · 27. März 2019",
+        "permalink": "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/",
+        "account": "vineriadeleste",
+        "source": "user_selected_instagram_post",
+        "source_sha256": "57c2f18e3dfc064abdb6f0a944a58bfc8de91a6355896cab324c1b1a2c342a2a"
       }
-    ]
+    ],
+    "selection_id": "pedro-six-posts-2026-09-19",
+    "display_mode": "curated_local_selection"
   }
 }

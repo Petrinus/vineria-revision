@@ -1,0 +1,39 @@
+{
+  "selection_id": "pedro-six-posts-2026-09-19",
+  "requested": 6,
+  "incorporated": 6,
+  "image_urls": [
+    "assets/instagram-selected/DSDZcT3DI2I.webp",
+    "assets/instagram-selected/DKU9PzaMm1w.webp",
+    "assets/instagram-selected/Ckbmq6yMEWS.webp",
+    "assets/instagram-selected/CgpJbcXjyWV.webp",
+    "assets/instagram-selected/BuzCKLOho7i.webp",
+    "assets/instagram-selected/BvhPAb1HqoM.webp"
+  ],
+  "permalinks": [
+    "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+    "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+    "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+    "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+    "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+    "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+  ],
+  "default_count": 6,
+  "existing_options_preserved": [
+    4,
+    8
+  ],
+  "styles": [
+    "v1",
+    "v2",
+    "v3",
+    "v4",
+    "v5",
+    "v6a",
+    "v6b",
+    "v08"
+  ],
+  "html_pages_updated": 159,
+  "automatic_instagram_connection": false,
+  "new_models": 0
+}

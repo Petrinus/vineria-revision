@@ -1,0 +1,403 @@
+{
+  "selection_id": "pedro-six-posts-2026-09-19",
+  "checks": [
+    {
+      "name": "v1 exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v1 six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v2 six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v3 six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v4 six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v5 six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v6a six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v6b six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 exact six posts",
+      "pass": true,
+      "detail": [
+        "https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/",
+        "https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/",
+        "https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/",
+        "https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/",
+        "https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/",
+        "https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"
+      ]
+    },
+    {
+      "name": "v08 six original images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 full menu preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 original logo preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 no overflow 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 no overflow 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 no overflow 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Default displays six",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Four, six and eight available",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Setting 4 shows 4 without duplicates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Setting 8 shows 6 without duplicates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Setting 6 shows 6 without duplicates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Six photographs available in the news image picker",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Independent selection sheet shows all six",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Selection sheet images load",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exactly eight original design options",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Old gallery is replaced by the exact selected six",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Local menu edits survive gallery update",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "passed": true,
+  "errors": []
+}
