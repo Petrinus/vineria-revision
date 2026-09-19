@@ -1,0 +1,30 @@
+{
+  "revision": "ef5a74910dda3979053dc8f8aee8f8d49f2d3200",
+  "verified": true,
+  "checks": [
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/ef5a74910dda3979053dc8f8aee8f8d49f2d3200/site/index.html",
+      "status": 200,
+      "matches": 10,
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/ef5a74910dda3979053dc8f8aee8f8d49f2d3200/site/entwuerfe/v10/index.html",
+      "status": 200,
+      "matches": 1,
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/ef5a74910dda3979053dc8f8aee8f8d49f2d3200/site/entwuerfe/v10/shop/index.html",
+      "status": 200,
+      "matches": 1,
+      "verified": true
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/ef5a74910dda3979053dc8f8aee8f8d49f2d3200/site/verwaltung/vorschau.html",
+      "status": 200,
+      "matches": 1,
+      "verified": true
+    }
+  ]
+}
