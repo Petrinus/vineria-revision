@@ -1,0 +1,877 @@
+{
+  "checks": 174,
+  "passed": 174,
+  "failed": [],
+  "details": [
+    {
+      "check": "HTTP checkout/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang checkout/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images checkout/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links checkout/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/checkout/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/checkout/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/checkout/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/checkout/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "No horizontal overflow editorial/index.html 1440",
+      "pass": true,
+      "detail": "{'scroll': 1440, 'width': 1440}"
+    },
+    {
+      "check": "No horizontal overflow editorial/index.html 390",
+      "pass": true,
+      "detail": "{'scroll': 390, 'width': 390}"
+    },
+    {
+      "check": "No horizontal overflow editorial/index.html 320",
+      "pass": true,
+      "detail": "{'scroll': 320, 'width': 320}"
+    },
+    {
+      "check": "HTTP editorial/service/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/service/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/service/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/service/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/cecina/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/cecina/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/cecina/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/cecina/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/chorizo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/chorizo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/chorizo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/chorizo/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "No horizontal overflow editorial/shop/index.html 1440",
+      "pass": true,
+      "detail": "{'scroll': 1440, 'width': 1440}"
+    },
+    {
+      "check": "No horizontal overflow editorial/shop/index.html 390",
+      "pass": true,
+      "detail": "{'scroll': 390, 'width': 390}"
+    },
+    {
+      "check": "No horizontal overflow editorial/shop/index.html 320",
+      "pass": true,
+      "detail": "{'scroll': 320, 'width': 320}"
+    },
+    {
+      "check": "HTTP editorial/shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/mejillones/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/mejillones/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/mejillones/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/mejillones/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/nuestro/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/nuestro/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/nuestro/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/nuestro/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/oricios/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/oricios/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/oricios/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/oricios/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/shop/vanidade/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/shop/vanidade/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/shop/vanidade/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/shop/vanidade/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP editorial/warenkorb/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang editorial/warenkorb/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images editorial/warenkorb/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links editorial/warenkorb/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP entwuerfe/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang entwuerfe/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images entwuerfe/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links entwuerfe/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "No horizontal overflow entwuerfe/index.html 1440",
+      "pass": true,
+      "detail": "{'scroll': 1440, 'width': 1440}"
+    },
+    {
+      "check": "No horizontal overflow entwuerfe/index.html 390",
+      "pass": true,
+      "detail": "{'scroll': 390, 'width': 390}"
+    },
+    {
+      "check": "No horizontal overflow entwuerfe/index.html 320",
+      "pass": true,
+      "detail": "{'scroll': 320, 'width': 320}"
+    },
+    {
+      "check": "HTTP index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "No horizontal overflow index.html 1440",
+      "pass": true,
+      "detail": "{'scroll': 1440, 'width': 1440}"
+    },
+    {
+      "check": "No horizontal overflow index.html 390",
+      "pass": true,
+      "detail": "{'scroll': 390, 'width': 390}"
+    },
+    {
+      "check": "No horizontal overflow index.html 320",
+      "pass": true,
+      "detail": "{'scroll': 320, 'width': 320}"
+    },
+    {
+      "check": "HTTP service/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang service/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images service/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links service/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/blanco-nieva/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/bujanda-blanco/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/cecina/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/cecina/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/cecina/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/cecina/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/chorizo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/chorizo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/chorizo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/chorizo/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/egiarte-crianza/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "No horizontal overflow shop/index.html 1440",
+      "pass": true,
+      "detail": "{'scroll': 1440, 'width': 1440}"
+    },
+    {
+      "check": "No horizontal overflow shop/index.html 390",
+      "pass": true,
+      "detail": "{'scroll': 390, 'width': 390}"
+    },
+    {
+      "check": "No horizontal overflow shop/index.html 320",
+      "pass": true,
+      "detail": "{'scroll': 320, 'width': 320}"
+    },
+    {
+      "check": "HTTP shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/lezaun-tempranillo/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/mejillones/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/mejillones/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/mejillones/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/mejillones/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/nuestro/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/nuestro/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/nuestro/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/nuestro/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/oricios/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/oricios/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/oricios/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/oricios/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/terrae-finca-vasallo/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP shop/vanidade/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang shop/vanidade/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images shop/vanidade/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links shop/vanidade/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "HTTP verwaltung/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang verwaltung/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images verwaltung/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links verwaltung/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "No horizontal overflow verwaltung/index.html 1440",
+      "pass": true,
+      "detail": "{'scroll': 1440, 'width': 1440}"
+    },
+    {
+      "check": "No horizontal overflow verwaltung/index.html 390",
+      "pass": true,
+      "detail": "{'scroll': 390, 'width': 390}"
+    },
+    {
+      "check": "No horizontal overflow verwaltung/index.html 320",
+      "pass": true,
+      "detail": "{'scroll': 320, 'width': 320}"
+    },
+    {
+      "check": "HTTP warenkorb/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Title/lang warenkorb/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No broken images warenkorb/index.html",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Local links warenkorb/index.html",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "36 menu entries",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "16 classics visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Keyboard wine tab",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Slideshow next",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Slideshow pause",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "11 products",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "4 red wines filter",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Search specific wine",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Six bottle case format",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Case plus wine shipping",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Checkout review stage",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Explicit nonpayment confirmation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Cold product disables normal shipping",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Empty cart has no checkout link",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Static login no POST",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Static login honest disabled state",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No JS exceptions",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "Reduced-motion default pauses slideshow",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No-JS all menu items readable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "No-JS product links exist",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}
