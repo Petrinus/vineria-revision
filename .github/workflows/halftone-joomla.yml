@@ -22,14 +22,16 @@ jobs:
       - name: Preserve approved originals and create monochrome halftone
         run: python3 update/artwork.py
       - name: Update the eight existing styles and common control panel
-        run: python3 update/build.py
+        run: |
+          python3 update/build.py
+          python3 update/refine.py
       - name: Test every style and the content editor
         run: python3 update/qa.py
       - name: Publish the tested preview files
         run: |
           git config user.name 'Vineria review builder'
           git config user.email '151435441+Petrinus@users.noreply.github.com'
-          git add site update/input reports/halftone skills/joomla-vineria/SKILL.md
+          git add site update/input update/qa.py reports/halftone skills/joomla-vineria/SKILL.md
           if ! git diff --cached --quiet; then
             git commit -m 'Publish original logo, monochrome dish artwork and shared content controls [skip ci]'
             git pull --rebase origin main
@@ -73,4 +75,5 @@ jobs:
             site
             reports/halftone
             docs/JOOMLA_MIGRACION_ES.md
+            docs/JOOMLA_MCP_ES.md
             skills/joomla-vineria/SKILL.md
