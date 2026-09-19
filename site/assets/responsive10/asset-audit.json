@@ -1,0 +1,80 @@
+{
+  "layers": [
+    {
+      "name": "bottle-ink",
+      "file": "bottle-ink.png",
+      "size": [
+        252,
+        302
+      ],
+      "transparent_fraction": 0.7512,
+      "source_sha256": "cb894f9496252dfc86f3f2845f7f53f91d126138d699da16399fdc1d604f3c3f",
+      "work_guides_detected": false,
+      "method": "provided PNG with original alpha; transparent margins trimmed"
+    },
+    {
+      "name": "conservas",
+      "file": "conservas.png",
+      "size": [
+        152,
+        116
+      ],
+      "transparent_fraction": 0.5401,
+      "source_sha256": "c6f47d2531b08a582f52c00a3a1f2dd0caf7844b6bc8278684795fd3dab40ecc",
+      "work_guides_detected": false,
+      "method": "provided PNG with original alpha; transparent margins trimmed"
+    },
+    {
+      "name": "herbs",
+      "file": "herbs.png",
+      "size": [
+        104,
+        121
+      ],
+      "transparent_fraction": 0.7448,
+      "source_sha256": "2baf55b2bad6b78328c7282163133251dbcdcd49e6078d7b9d705d8b1f2f8cfc",
+      "work_guides_detected": false,
+      "method": "provided PNG with original alpha; transparent margins trimmed"
+    },
+    {
+      "name": "olives",
+      "file": "olives.png",
+      "size": [
+        143,
+        112
+      ],
+      "transparent_fraction": 0.475,
+      "source_sha256": "66a079d74b994c95172e7297acc6bf767cfdb80ab0c3f0d4efcb27a7bb370567",
+      "work_guides_detected": false,
+      "method": "provided PNG with original alpha; transparent margins trimmed"
+    },
+    {
+      "name": "wine-paper",
+      "file": "wine-paper.png",
+      "size": [
+        313,
+        533
+      ],
+      "transparent_fraction": 0.1934,
+      "source_sha256": "a885e31fe0d5d7854a52b89d0b28f1a83558683552da0dec5625985c04cc82ae",
+      "work_guides_detected": false,
+      "method": "provided PNG with original alpha; transparent margins trimmed"
+    },
+    {
+      "name": "footer-paint",
+      "file": "footer-paint.png",
+      "size": [
+        1217,
+        215
+      ],
+      "transparent_fraction": 0.121,
+      "source_sha256": "4c76c48ea9312b90570e5df497ba26d086f94008ecd4b1e8a215ef1db5befc01",
+      "work_guides_detected": false,
+      "method": "provided PNG with original alpha; transparent margins trimmed"
+    }
+  ],
+  "guides_and_raw_in_site": false,
+  "paper_background": "continuous multiscale paper grain, no tiled screenshot",
+  "photo": "same supplied photograph with irregular mask, no regenerated faces",
+  "footer": "provided reconstructed paint, not unrecoverable original hidden pixels"
+}

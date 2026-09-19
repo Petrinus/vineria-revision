@@ -1,5 +1,5 @@
 {
-  "passed": false,
+  "passed": true,
   "count": 48,
   "checks": [
     {
@@ -144,7 +144,7 @@
     },
     {
       "name": "shop clean separated PNG present",
-      "pass": false,
+      "pass": true,
       "detail": null
     },
     {
