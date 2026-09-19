@@ -4,12 +4,12 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,21 +18,38 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - name: Prepare media and pages
+        run: |
+          python3 -m pip install --quiet Pillow
+          mkdir -p site
+          python3 tools/assets.py
+          if [ -f tools/build.py ]; then python3 tools/build.py; fi
+          touch site/.nojekyll
+      - name: Save compiled public review
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add site
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build self-contained public review assets [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vineria-review
+          path: site
       - name: Configure Pages
+        id: pages
+        continue-on-error: true
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Prepare review files
-        run: |
-          mkdir -p site
-          if [ ! -f site/index.html ]; then
-            printf '<!doctype html><html lang="de"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Vineria del Este</title><h1>Vineria del Este</h1><p>Die neue Designansicht wird vorbereitet. Dies ist nicht die Restaurant-Website.</p></html>' > site/index.html
-          fi
-          touch site/.nojekyll
-          if [ -f tools/build.py ]; then python3 tools/build.py; fi
       - uses: actions/upload-pages-artifact@v4
+        if: steps.pages.outcome == 'success'
         with:
           path: site
       - name: Deploy review
         id: deployment
+        if: steps.pages.outcome == 'success'
         uses: actions/deploy-pages@v4
