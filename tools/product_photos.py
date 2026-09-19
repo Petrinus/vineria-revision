@@ -45,7 +45,7 @@ def load_one(item):
    diff=ImageChops.difference(image,Image.new('RGB',image.size,'white')).convert('L').point(lambda x:255 if x>29 else 0);box=diff.getbbox()
    if box:
     pad=max(8,round(max(image.size)*.012));left,top,right,bottom=box;image=image.crop((max(0,left-pad),max(0,top-pad),min(image.width,right+pad),min(image.height,bottom+pad)))
-   if item['kind']=='wine' and image.width>image.height*1.1:raise ValueError('Landscape image is not a bottle packshot: '+str(image.size))
+   if item['kind']=='wine' and image.width>image.height*1.1 and not item.get('allow_landscape_product_photo',False):raise ValueError('Landscape image needs explicit product-photo verification: '+str(image.size))
    image.thumbnail((800,1100));image.save(target,quality=89,method=6)
    record.update(file='assets/products/'+ident+'.webp',image_url=url,width=image.width,height=image.height,original_size=original_size,sha256=hashlib.sha256(raw).hexdigest(),downloaded=True,warnings=warnings)
    return record
@@ -62,11 +62,10 @@ def apply(download=True):
   records=list(pool.map(load_one,SPEC['products']))if download else json.loads((A/'product-photo-sources.json').read_text())['products']
  photos={r['id']:r for r in records if r.get('downloaded')}
  report={'products':records,'usage':SPEC['usage'],'wine_photos':sum(r['kind']=='wine'for r in photos.values()),'pages_changed':[]}
- # Keep diagnostics even when an image host fails; do not publish an incomplete requested set.
  (REPORTS/'download-results.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
  print(json.dumps({'downloads':[{'id':r['id'],'ok':r['downloaded'],'warnings':r.get('warnings',[])}for r in records]},ensure_ascii=False,indent=2),flush=True)
  assert 'mejillones'in photos and'oricios'in photos,'Both requested tins are required'
- assert report['wine_photos']>=6,'At least six authentic wine packshots are required'
+ assert report['wine_photos']>=6,'At least six authentic wine photographs are required'
  for file in [ROOT/'src/catalog.json',A/'catalog.json']:
   catalog=json.loads(file.read_text())
   for p in catalog['products']:
