@@ -1,0 +1,21 @@
+{
+  "revision": "91995e0ff2b27631d6ed9dbc8730b9a49b51ec16",
+  "checks": [
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/91995e0ff2b27631d6ed9dbc8730b9a49b51ec16/site/index.html",
+      "status": 200,
+      "elements": 8
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/91995e0ff2b27631d6ed9dbc8730b9a49b51ec16/site/verwaltung/vorschau.html",
+      "status": 200,
+      "elements": 1
+    },
+    {
+      "url": "https://rawcdn.githack.com/Petrinus/vineria-revision/91995e0ff2b27631d6ed9dbc8730b9a49b51ec16/site/entwuerfe/v08/index.html",
+      "status": 200,
+      "elements": 1
+    }
+  ],
+  "verified": true
+}
