@@ -1,0 +1,81 @@
+name: Publish selected Instagram photographs
+on:
+  push:
+    branches: [main]
+    paths: ['tools/apply_selected_instagram.py','tools/qa_selected_instagram.py','.github/workflows/publish-selected-instagram.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: vineria-publish-selected-photos
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install image and browser verification tools
+        run: |
+          python3 -m pip install --quiet Pillow beautifulsoup4 playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Incorporate only the six verified originals
+        run: |
+          python3 tools/apply_selected_instagram.py
+          python3 -m py_compile update/build.py
+          node --check site/assets/content-engine.js
+          node --check site/assets/control.js
+      - name: Verify every design and the image selection controls
+        run: python3 tools/qa_selected_instagram.py
+      - name: Save the verified public pages
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add site media/instagram-curated.json update/build.py update/control.js update/content-engine.js update/content.css reports/instagram-selection
+          if ! git diff --cached --quiet; then
+            git commit -m 'Use the six exact Instagram photographs in all eight existing designs [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          git rev-parse HEAD > reports/instagram-selection/published-revision.txt
+      - name: Verify public delivery
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from bs4 import BeautifulSoup
+          import json
+          sha=Path('reports/instagram-selection/published-revision.txt').read_text().strip()
+          base='https://rawcdn.githack.com/Petrinus/vineria-revision/'+sha+'/site/'
+          result={'revision':sha,'checks':[]}
+          for route,selector in [('index.html','[data-proposal]'),('verwaltung/instagram-auswahl.html','.selected-photos article'),('entwuerfe/v08/index.html','#vde-content-seed')]:
+              row={'url':base+route}
+              try:
+                  with urlopen(Request(base+route,headers={'User-Agent':'Mozilla/5.0'}),timeout=30) as response:
+                      row['status']=response.status
+                      soup=BeautifulSoup(response.read().decode('utf-8'),'html.parser')
+                  row['matching_elements']=len(soup.select(selector))
+                  if route=='entwuerfe/v08/index.html':
+                      row['selected_photo_count']=len(json.loads(soup.select_one('#vde-content-seed').string)['content']['instagram']['items'])
+              except Exception as exc:row['error']=str(exc)
+              result['checks'].append(row)
+          result['verified']=all(r.get('status')==200 and r.get('matching_elements',0)>0 for r in result['checks']) and result['checks'][-1].get('selected_photo_count')==6
+          Path('reports/instagram-selection/public.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          print(json.dumps(result,ensure_ascii=False,indent=2))
+          PY
+          git add reports/instagram-selection/public.json reports/instagram-selection/published-revision.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record public delivery of the selected photos [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: six-selected-instagram-photos
+          path: |
+            site/assets/instagram-selected
+            site/verwaltung/instagram-auswahl.html
+            media/instagram-selection.json
+            media/instagram-curated.json
+            reports/instagram-selection
