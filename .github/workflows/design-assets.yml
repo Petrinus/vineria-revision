@@ -1,0 +1,37 @@
+name: Prepare requested design assets
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['design-lab/assets.py','design-lab/public-images.json','.github/workflows/design-assets.yml']
+permissions:
+  contents: write
+concurrency:
+  group: prepare-design-assets
+  cancel-in-progress: true
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 -m pip install --quiet pillow numpy
+      - name: Read approved public images and extract the supplied composition
+        run: python3 design-lab/assets.py
+      - name: Save images only
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add site/assets/lab design-lab/input
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save twelve dish graphics, exact homepage pieces and unaltered portrait cutouts [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exact-reference-and-twelve-graphics
+          path: |
+            site/assets/lab
+            design-lab/input
