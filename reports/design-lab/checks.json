@@ -1,0 +1,845 @@
+{
+  "passed": false,
+  "count": 147,
+  "checks": [
+    {
+      "name": "v1 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v1 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v1 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v1 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v2 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v2 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v2 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v2 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v3 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v3 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v3 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v3 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v4 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v4 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v4 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v4 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v5 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v5 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v5 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v5 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v6a complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v6a responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v6a responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v6a responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v6b complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v6b responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v6b responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v6b responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v08 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v08 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v08 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v08 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "v09 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v09 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v09 responsive 390",
+      "pass": false,
+      "detail": {
+        "viewport": 390,
+        "width": 397
+      }
+    },
+    {
+      "name": "v09 responsive 320",
+      "pass": false,
+      "detail": {
+        "viewport": 320,
+        "width": 371
+      }
+    },
+    {
+      "name": "09 uses exact photographic cutout",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "09 graphic slideshow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 complete menu in DOM",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 all 36 entries visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 full-menu control",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 one common catering form",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 nine event fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 large-group option",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v10 responsive 1440",
+      "pass": true,
+      "detail": {
+        "viewport": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "v10 responsive 390",
+      "pass": true,
+      "detail": {
+        "viewport": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "v10 responsive 320",
+      "pass": true,
+      "detail": {
+        "viewport": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "10 uses extracted pieces",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "10 source composition pixel comparison above corrected footer",
+      "pass": false,
+      "detail": {
+        "mean_absolute_error_0_255": 5.6668
+      }
+    },
+    {
+      "name": "10 opens speisekarte",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens weine",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens vineria",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens besuch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens events",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens news",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens instagram",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "10 opens grafiken",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09/shop paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 eleven products",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 store images",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 shop width 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 shop width 390",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "v09 shop width 320",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "v09/product paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 actual wine detail",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09/cart paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 test cart works",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "v09/checkout paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 no-payment test checkout",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09/service paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 every local route and dependency exists",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v10/shop paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 eleven products",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 store images",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 shop width 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 shop width 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 shop width 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10/product paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 actual wine detail",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10/cart paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 test cart works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10/checkout paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 no-payment test checkout",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10/service paired theme",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 every local route and dependency exists",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Shared management retains remove and visibility controls",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v09 shared category and dish update",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 shared category and dish update",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "All ten models present without duplicates",
+      "pass": true,
+      "detail": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6a",
+        "v6b",
+        "v08",
+        "v09",
+        "v10"
+      ]
+    },
+    {
+      "name": "v09 paired comparator opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v10 paired comparator opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
