@@ -1,0 +1,28 @@
+{
+  "models": [
+    "v1",
+    "v2",
+    "v3",
+    "v4",
+    "v5",
+    "v6a",
+    "v6b",
+    "v08"
+  ],
+  "restaurant_pages": [
+    "editorial/index.html",
+    "fanzine/index.html",
+    "entwuerfe/v6b/index.html",
+    "entwuerfe/v4/index.html",
+    "entwuerfe/v08/index.html",
+    "entwuerfe/v3/index.html",
+    "entwuerfe/v2/index.html",
+    "entwuerfe/v5/index.html",
+    "entwuerfe/v6a/index.html",
+    "entwuerfe/v1/index.html"
+  ],
+  "menu_entries": 36,
+  "products": 11,
+  "management": "browser-only review; Joomla integration pending",
+  "new_models": 0
+}

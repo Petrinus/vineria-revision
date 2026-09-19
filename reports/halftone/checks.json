@@ -1,0 +1,775 @@
+{
+  "checks": [
+    {
+      "name": "v1/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v1/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v1/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v1/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v1/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v1/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v1/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v1/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v2/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v2/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v2/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v2/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v2/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v2/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v2/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v2/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v3/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v3/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v3/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v3/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v3/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v3/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v3/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v3/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v4/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v4/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v4/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v4/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v4/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v4/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v4/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v4/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v5/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v5/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v5/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v5/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v5/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v5/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v5/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v5/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v6a/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v6a/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v6a/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v6a/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v6a/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v6a/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v6a/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v6a/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v6b/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v6b/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v6b/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v6b/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v6b/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v6b/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v6b/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v6b/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v08/restaurant images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v08/restaurant original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 full menu",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 shared blocks",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08/restaurant width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v08/restaurant width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v08/restaurant width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "v08/shop images",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "v08/shop original logo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 catalogue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08/shop width 1440",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "content": 1440
+      }
+    },
+    {
+      "name": "v08/shop width 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "v08/shop width 320",
+      "pass": true,
+      "detail": {
+        "width": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "Delete cross and checkbox",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Delete dish persists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Undo dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Category creation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v1 added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v2 added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v3 added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v4 added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v5 added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6a added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v6b added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "v08 added category and dish",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "New product rendered",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "New product in cart",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "New product detail",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "News with text and photo",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "One-click news hide",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Instagram configurable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Management mobile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Only the original eight designs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No script errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "passed": true,
+  "errors": []
+}

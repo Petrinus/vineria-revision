@@ -1,5 +1,5 @@
 ---
-name: jo om la-vineria
+name: joomla-vineria
 description: Plan and validate Joomla adaptation of Vineria del Este without altering the approved designs or live restaurant.
 ---
 

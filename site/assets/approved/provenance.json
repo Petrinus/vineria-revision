@@ -1,0 +1,40 @@
+{
+  "artworks": [
+    {
+      "name": "pulpo",
+      "source_sha256": "56f8d6e11189d4a9f3976a9035579f69ef8336046db9b206f13d1d9ec1a8e122",
+      "rgb_ink": [
+        0,
+        0,
+        0
+      ],
+      "alpha": true,
+      "people": false
+    },
+    {
+      "name": "boquerones",
+      "source_sha256": "4da4a7ec4775b94834b895da9dc2c4bbf18c06bea3801bf1751337cd990134bd",
+      "rgb_ink": [
+        0,
+        0,
+        0
+      ],
+      "alpha": true,
+      "people": false
+    },
+    {
+      "name": "paella",
+      "source_sha256": "54ed2aebd5a44cfe31de29fca0efce1a2675e0aa9d800d30773e2e4d478de33e",
+      "rgb_ink": [
+        0,
+        0,
+        0
+      ],
+      "alpha": true,
+      "people": false
+    }
+  ],
+  "people_illustration_used": false,
+  "logo_redrawn": false,
+  "color_originals_preserved": true
+}
