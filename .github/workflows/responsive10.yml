@@ -1,0 +1,98 @@
+name: Responsive model 10 trial
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['responsive10/**', '.github/workflows/responsive10.yml']
+permissions:
+  contents: write
+concurrency:
+  group: vineria-responsive10
+  cancel-in-progress: true
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install image and browser tools
+        run: |
+          python3 -m pip install --quiet pillow numpy beautifulsoup4 playwright fonttools brotli
+          python3 -m playwright install --with-deps chromium
+      - name: Validate and prepare actual transparent PNGs
+        run: python3 responsive10/import_assets.py
+      - name: Prepare locally served typography
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import urlopen
+          from fontTools.ttLib import TTFont
+          import io
+          root=Path('site/assets/responsive10')
+          for directory,name in [('dmserifdisplay','DMSerifDisplay-Regular'),('barlowcondensed','BarlowCondensed-SemiBold')]:
+              target=root/(name+'.woff2')
+              if not target.exists():
+                  with urlopen('https://raw.githubusercontent.com/google/fonts/main/ofl/'+directory+'/'+name+'.ttf',timeout=25)as response:font=TTFont(io.BytesIO(response.read()))
+                  font.flavor='woff2';font.save(target)
+                  with urlopen('https://raw.githubusercontent.com/google/fonts/main/ofl/'+directory+'/OFL.txt',timeout=25)as response:(root/(directory+'-OFL.txt')).write_bytes(response.read())
+          PY
+      - name: Replace only model 10 with fluid HTML and matching shop
+        run: python3 responsive10/build.py
+      - name: Test mobile navigation, content, PNGs and shop
+        run: python3 responsive10/qa.py
+      - name: Publish the tested trial
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add site reports/responsive10
+          if ! git diff --cached --quiet; then
+            git commit -m 'Replace model 10 screenshot tiles with responsive HTML and transparent art [skip ci]'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          git rev-parse HEAD > reports/responsive10/published-revision.txt
+      - name: Verify the public website
+        run: |
+          python3 - <<'PY'
+          import json,time
+          from pathlib import Path
+          from urllib.request import urlopen,Request
+          from bs4 import BeautifulSoup
+          sha=Path('reports/responsive10/published-revision.txt').read_text().strip()
+          base='https://rawcdn.githack.com/Petrinus/vineria-revision/'+sha+'/site/'
+          checks=[]
+          for route,selector,count in [('index.html','[data-proposal]',10),('entwuerfe/v10/index.html','.v10-hero',1),('entwuerfe/v10/shop/index.html','.v10-store-hero',1),('verwaltung/vorschau.html','#vde-control',1)]:
+              row={'url':base+route}
+              for attempt in range(3):
+                  try:
+                      with urlopen(Request(base+route,headers={'User-Agent':'Mozilla/5.0'}),timeout=30)as response:
+                          doc=BeautifulSoup(response.read().decode('utf-8'),'html.parser');row.update(status=response.status,matches=len(doc.select(selector)))
+                      row['verified']=row['status']==200 and row['matches']==count
+                      break
+                  except Exception as e:row['error']=str(e);time.sleep(2)
+              checks.append(row)
+          report={'revision':sha,'verified':all(r.get('verified',False)for r in checks),'checks':checks}
+          Path('reports/responsive10/public.json').write_text(json.dumps(report,indent=2))
+          print(json.dumps(report,indent=2))
+          PY
+      - name: Save QA reports even if a check fails
+        if: always()
+        run: |
+          git config user.name 'Vineria review builder'
+          git config user.email '151435441+Petrinus@users.noreply.github.com'
+          git add reports/responsive10
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record responsive trial browser checks [skip ci]'
+            git stash --include-untracked
+            git pull --rebase origin main
+            git push origin HEAD:main
+            git stash pop || true
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: responsive10-browser-evidence
+          path: |
+            reports/responsive10
+            site/assets/responsive10/asset-audit.json
+            site/assets/responsive10/layers-on-paper.jpg
