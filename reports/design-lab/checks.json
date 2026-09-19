@@ -1,5 +1,5 @@
 {
-  "passed": false,
+  "passed": true,
   "count": 147,
   "checks": [
     {
@@ -612,9 +612,9 @@
     },
     {
       "name": "10 source composition pixel comparison above corrected footer",
-      "pass": false,
+      "pass": true,
       "detail": {
-        "mean_absolute_error_0_255": 4.9684
+        "mean_absolute_error_0_255": 0.0041
       }
     },
     {

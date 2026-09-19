@@ -84,5 +84,23 @@
     "ink": "#1c1b18",
     "accent": "#29241f",
     "radius": "0"
+  },
+  {
+    "id": "v09",
+    "num": "09",
+    "title": "Punk & Farbe",
+    "paper": "#eee8d9",
+    "ink": "#24221f",
+    "accent": "#dfdf4a",
+    "radius": "0"
+  },
+  {
+    "id": "v10",
+    "num": "10",
+    "title": "Die Bildvorlage",
+    "paper": "#eee8d9",
+    "ink": "#24221f",
+    "accent": "#29251e",
+    "radius": "0"
   }
 ]
