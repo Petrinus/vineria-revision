@@ -1,0 +1,38 @@
+{
+  "links": [
+    "/index.php",
+    "/",
+    "#mod-100",
+    "#mod-101",
+    "#mod-151",
+    "#mod-102",
+    "https://www.google.com/maps/place/B%C3%A4nschstra%C3%9Fe+41,+10247+Berlin/@52.5188252,13.4633573,18z/data=!4m5!3m4!1s0x47a84e61996e490d:0xa39a3db28d27a3d6!8m2!3d52.5188252!4d13.4644516",
+    "tel:+493042024943",
+    "mailto:vineriadeleste@gmail.com",
+    "http://www.joomlart.com/",
+    "https://www.joomla.org",
+    "https://www.gnu.org/licenses/gpl-2.0.html",
+    "/index.php/impressum",
+    "/index.php/datenschutz",
+    "#tebi-reservations"
+  ],
+  "scripts": [
+    "",
+    "/media/system/js/core.min.js?a3d8f8",
+    "/media/vendor/jquery/js/jquery.min.js?3.7.1",
+    "/media/vendor/jquery/js/jquery-noconflict.min.js?3.7.1",
+    "/plugins/system/t3/base-bs3/bootstrap/js/bootstrap.js",
+    "/plugins/system/t3/base-bs3/js/jquery.tap.min.js",
+    "/plugins/system/t3/base-bs3/js/off-canvas.js",
+    "/plugins/system/t3/base-bs3/js/script.js",
+    "/plugins/system/t3/base-bs3/js/menu.js",
+    "/templates/ja_diner/js/isotope/isotope.pkgd.min.js",
+    "/templates/ja_diner/js/imagesloaded.pkgd.min.js",
+    "/templates/ja_diner/js/owl-carousel/owl.carousel.min.js",
+    "/templates/ja_diner/js/script.js",
+    "/plugins/system/t3/base-bs3/js/nav-collapse.js",
+    "",
+    "",
+    "https://live.tebi.co/ecom/widget-manager.js"
+  ]
+}
