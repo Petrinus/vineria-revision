@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "selection_id": "pedro-six-posts-2026-09-19",
+  "instruction": "Use these exact six user-selected posts. Do not substitute other posts or attach an unrelated photo to one of these permalinks. Preserve originals and the original account for each image. Keep all eight existing website styles.",
+  "automatic_instagram_connection": false,
+  "posts": [
+    {"order":1,"account":"vineria.del.este","shortcode":"DSDZcT3DI2I","permalink":"https://www.instagram.com/vineria.del.este/p/DSDZcT3DI2I/"},
+    {"order":2,"account":"vineria.del.este","shortcode":"DKU9PzaMm1w","permalink":"https://www.instagram.com/vineria.del.este/p/DKU9PzaMm1w/"},
+    {"order":3,"account":"vineria.del.este","shortcode":"Ckbmq6yMEWS","permalink":"https://www.instagram.com/vineria.del.este/p/Ckbmq6yMEWS/"},
+    {"order":4,"account":"vineria.del.este","shortcode":"CgpJbcXjyWV","permalink":"https://www.instagram.com/vineria.del.este/p/CgpJbcXjyWV/"},
+    {"order":5,"account":"vineriadeleste","shortcode":"BuzCKLOho7i","permalink":"https://www.instagram.com/vineriadeleste/p/BuzCKLOho7i/"},
+    {"order":6,"account":"vineriadeleste","shortcode":"BvhPAb1HqoM","permalink":"https://www.instagram.com/vineriadeleste/p/BvhPAb1HqoM/"}
+  ]
+}
