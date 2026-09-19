@@ -1,0 +1,4 @@
+{
+  "purpose": "Download only the homepage reference image that the user explicitly asked to extract and publish. This URL grants temporary read access to that single image, not to an account or repository.",
+  "url": "https://d2jqrm6oza8nb6.cloudfront.net/datasets/577b1697-e589-485f-9acc-84ffc96fe117.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYTMwMzNlOGM0NjlhZTJlNiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTk0MjAyOH0.mmQDI_Mgj99WY6G1Bf9l4nmJsYPRCBTPKLFZBpPqh8I"
+}
