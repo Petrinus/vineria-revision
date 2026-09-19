@@ -1,0 +1,5 @@
+{
+  "purpose": "Download the two photographic cutouts specifically approved for inclusion in the public website. These addresses serve those image files only; they do not grant account access. Cache the image bytes in design-lab/input before building the site.",
+  "owner": "https://dnznrvs05pmza.cloudfront.net/sam3_image_segmentation/633540e8-3da1-4fa4-9f45-9e5b2d3eeaa2/d3082642-0362-43b2-bcc5-c21f3c772ea5.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMTA0YzhjNTQ3N2VmZjgyNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTk0NDkxNn0.T5pQLUqqNIFFrJTJ_o4UxiOgIbDemBJdFgmXr_uwt5k",
+  "portrait": "https://dnznrvs05pmza.cloudfront.net/sam3_image_segmentation/be16b229-b985-402f-ad86-5737f6a82139/9803e89d-9a34-4c22-92c6-8137b6a4c4e2.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYzBmODM1ZmY1ZWVjZGQ0NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTk0NjYyM30.s6pjVmEBsKeobW8bXts_2oOdIe9nrq6cPsd51aAdVes"
+}
