@@ -1,6 +1,16 @@
 {
-  "models": 8,
+  "models": [
+    "v1",
+    "v2",
+    "v3",
+    "v4",
+    "v5",
+    "v6a",
+    "v6b",
+    "v08"
+  ],
   "model08_menu_items": 36,
+  "model08_wine_photos": 7,
   "previous_models_kept": true,
   "events_form": true,
   "static_checks_passed": true
