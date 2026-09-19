@@ -1,5 +1,8 @@
 name: Verify public proposal selector
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/public-proposal-check.yml']
   workflow_run:
     workflows: ['Publish all design proposals']
     types: [completed]
@@ -11,12 +14,30 @@ concurrency:
   cancel-in-progress: true
 jobs:
   public-check:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with:
           ref: main
+      - name: Refresh the provider cache for our own updated review pages
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import urllib.request,urllib.parse,json
+          base='https://raw.githack.com/Petrinus/vineria-revision/main/site/'
+          paths=['index.html','entwuerfe/index.html','verwaltung/index.html','verwaltung/vorschau.html','assets/catalogue.css','assets/catalogue.js','assets/management-preview.js']
+          results=[]
+          for path in paths:
+              target=base+path
+              req=urllib.request.Request('https://raw.githack.com/purge?url='+urllib.parse.quote(target,safe=''),method='DELETE')
+              try:
+                  r=urllib.request.urlopen(req,timeout=15)
+                  results.append({'target':target,'status':r.status})
+              except Exception as e:results.append({'target':target,'error':str(e)})
+          out=Path('reports/proposals');out.mkdir(parents=True,exist_ok=True)
+          (out/'cache-refresh.json').write_text(json.dumps(results,indent=2));print(json.dumps(results,indent=2))
+          PY
       - name: Prepare browser
         run: |
           python3 -m pip install --quiet playwright
