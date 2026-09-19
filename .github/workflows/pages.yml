@@ -19,14 +19,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
-      - name: Prepare media and pages
+      - name: Prepare media and all paired proposals
         run: |
-          python3 -m pip install --quiet Pillow
+          python3 -m pip install --quiet Pillow beautifulsoup4
           mkdir -p site
           python3 tools/assets.py
           python3 tools/build.py
           python3 tools/polish.py
-          if [ -f tools/build_review_portal.py ]; then python3 tools/build_review_portal.py; fi
+          if [ -f tools/proposals.py ]; then
+            python3 tools/proposals.py
+            if [ -f tools/proposal_fixes.py ]; then python3 tools/proposal_fixes.py; fi
+          elif [ -f tools/build_review_portal.py ]; then
+            python3 tools/build_review_portal.py
+          fi
           touch site/.nojekyll
       - name: Save compiled public review
         run: |
@@ -34,7 +39,7 @@ jobs:
           git config user.email '151435441+Petrinus@users.noreply.github.com'
           git add site
           if ! git diff --cached --quiet; then
-            git commit -m 'Build integrated restaurant and shop review [skip ci]'
+            git commit -m 'Build client selector with all restaurant and shop proposals [skip ci]'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
