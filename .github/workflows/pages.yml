@@ -2,7 +2,7 @@ name: Publish client review
 on:
   push:
     branches: [main]
-    paths: ['src/**', 'tools/assets.py', 'tools/build.py', 'tools/recover-brand.py', 'tools/polish.py', '.github/workflows/pages.yml']
+    paths: ['src/**', 'tools/assets.py', 'tools/build.py', 'tools/build_base.py', 'tools/refine.py', 'tools/recover-brand.py', 'tools/polish.py', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -26,6 +26,7 @@ jobs:
           python3 tools/assets.py
           python3 tools/build.py
           python3 tools/polish.py
+          if [ -f tools/build_review_portal.py ]; then python3 tools/build_review_portal.py; fi
           touch site/.nojekyll
       - name: Save compiled public review
         run: |
