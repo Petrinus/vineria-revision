@@ -1,0 +1,25 @@
+name: Review browser checks
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: review-checks
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          python3 -m pip install --quiet Pillow playwright
+          python3 -m playwright install --with-deps chromium
+          python3 tools/build.py
+          python3 tools/test_preview.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: review-checks
+          path: checks
