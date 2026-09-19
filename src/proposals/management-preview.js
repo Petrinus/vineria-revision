@@ -1,89 +1,144 @@
 'use strict';
-/* Shared management preview. Drafts stay local: no live shop, accounts or publication. */
-(async()=>{
- if(!document.body.hasAttribute('data-management-preview'))return;
- const $=s=>document.querySelector(s), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const key='vineria-management-local-preview-v1', list=$('#admin-list'), select=$('#admin-category'), status=$('#save-state');
- const labels={wochenkarte:'Wochenkarte',klassiker:'Klassiker',weisswein:'Weißwein',rotwein:'Rotwein',conservas:'Konserven',embutidos:'Chorizo & Cecina'};
- const id=()=> 'item-'+crypto.randomUUID(), clone=x=>structuredClone(x);
- let data,original,tab='menu',filter='',undo=null,changed=false;
- function say(t){status.textContent=t;}
- function dirty(){changed=true;say('Ungespeicherter Entwurf · nur in diesem Browser. Keine Veröffentlichung.');}
- function normalize(d){
-  if(!d||!d.menu||Array.isArray(d.menu)||!Array.isArray(d.products)||!Array.isArray(d.team))throw Error('Invalid draft');
-  for(const rows of Object.values(d.menu)){if(!Array.isArray(rows))throw Error('Invalid menu');for(const x of rows){x.id||=id();x.visible=x.visible!==false;}}
-  for(const x of d.products){x.id||=id();x.category||='sonstiges';x.visible=x.visible!==false;}
-  d.menuCategories??=Object.keys(d.menu).map(k=>({id:k,name:labels[k]||k,active:true}));
-  d.shopCategories??=[...new Set(d.products.map(x=>x.category))].map(k=>({id:k,name:labels[k]||k,active:true}));
-  if(!Array.isArray(d.menuCategories)||!Array.isArray(d.shopCategories))throw Error('Invalid categories');
-  for(const k of Object.keys(d.menu))if(!d.menuCategories.some(c=>c.id===k))d.menuCategories.push({id:k,name:labels[k]||k,active:true});
-  for(const p of d.products)if(!d.shopCategories.some(c=>c.id===p.category))d.shopCategories.push({id:p.category,name:labels[p.category]||p.category,active:true});
-  for(const c of d.menuCategories)if(!Object.hasOwn(d.menu,c.id))d.menu[c.id]=[];
-  return d;
- }
- try{
-  const r=await fetch('../assets/catalog.json');if(!r.ok)throw Error('Catalog unavailable');const c=await r.json();
-  original=normalize({menu:Object.fromEntries(Object.entries(c.menu).map(([k,v])=>[k,v.map(x=>({name:x[0],description:x[1],price:x[2],visible:true}))])),products:c.products.map(x=>({...x,visible:true})),team:[{name:'Buñol',role:'Verwaltung',active:true},{name:'Kraft',role:'Verwaltung',active:true}]});
-  data=clone(original);try{const saved=localStorage.getItem(key);if(saved)data=normalize(JSON.parse(saved));}catch{say('Gespeicherter Entwurf nicht lesbar. Beispieldaten geladen; vorhandener Speicher wurde nicht überschrieben.');}
- }catch{list.innerHTML='<p class="empty-state">Die Beispieldaten konnten nicht geladen werden. Bitte den Web-Link erneut öffnen.</p>';return;}
- $('#admin-entry').hidden=true;$('#admin-preview').hidden=false;
- const style=document.createElement('style');style.textContent=`.management-tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.category-manager{border:1px solid #ccc4b8;padding:20px;margin:20px 0;background:#fffdf7}.category-line{display:grid;grid-template-columns:minmax(120px,1fr) auto auto;gap:12px;border-top:1px solid #ddd5c9;padding:14px 0}.category-line input[type=text],.category-line select,.product-fields input,.product-fields select,.product-fields textarea{width:100%;padding:9px;border:1px solid #bcb5aa;background:#fff;font:inherit;color:#252525}.category-line .category-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.category-line .category-move{grid-column:1/-1;font-size:12px}.management-tools button,.category-manager button,.row-delete,.photo-clear{min-height:38px;padding:7px 12px;border:1px solid #8a3047;background:transparent;color:#70243a;cursor:pointer}.row-delete{float:right;font-size:17px;margin-bottom:8px}.row-delete:focus-visible,.category-manager button:focus-visible{outline:3px solid #8a3047;outline-offset:3px}.edit-row{position:relative}.product-fields{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;border-top:1px solid #ddd5c9;padding-top:15px}.product-fields label{display:block}.product-photo{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.product-photo img{width:100px;height:100px;object-fit:contain;background:#fff;border:1px solid #ddd}.product-photo input{max-width:100%}.category-manager [hidden],.management-tools [hidden]{display:none!important}.category-manager small{font-size:12px}.management-version{font-size:12px;margin:10px 0;color:#64594d}@media(max-width:650px){.category-line{grid-template-columns:1fr}.category-line .category-move{grid-column:auto}.product-fields{grid-template-columns:1fr}.product-fields input,.product-fields textarea,.category-line input{font-size:16px}}`;
- document.head.append(style);
- const tools=document.createElement('div');tools.className='management-tools';tools.innerHTML='<button type="button" id="manage-categories">Bereiche verwalten</button><button type="button" id="undo-management" hidden>Letzte Löschung rückgängig</button>';
- list.before(tools);const panel=document.createElement('section');panel.className='category-manager';panel.hidden=true;panel.setAttribute('aria-label','Bereiche und Kategorien verwalten');list.before(panel);
- const version=document.createElement('p');version.className='management-version';version.textContent='Bearbeitungsstand: 19.09.2026 · Kategorien, Löschen & Produktfotos · Lokaler Entwurf';tools.before(version);
- function cats(){return tab==='menu'?data.menuCategories:data.shopCategories;}
- function options(value,all=false){return (all?'<option value="">Alle Produkte</option>':'')+cats().map(c=>`<option value="${esc(c.id)}" ${value===c.id?'selected':''}>${esc(c.name)}${c.active===false?' (ausgeblendet)':''}</option>`).join('');}
- function categorySelect(){if(tab==='team')return;if(!cats().some(c=>c.id===filter))filter=tab==='menu'?(cats()[0]?.id||''):'';select.innerHTML=options(filter,tab==='products');select.value=filter;}
- function count(c){return tab==='menu'?(data.menu[c.id]||[]).length:data.products.filter(p=>p.category===c.id).length;}
- function remember(){undo=clone(data);$('#undo-management').hidden=false;}
- function renderCategories(){
-  if(panel.hidden||tab==='team')return;
-  panel.innerHTML=`<h2>${tab==='menu'?'Bereiche der Speisekarte':'Kategorien der Tienda'}</h2><p>Umbenennen verändert keine Einträge. Ausblenden behält alle Inhalte. Gefüllte Bereiche vor dem Löschen einem anderen Bereich zuordnen.</p><button type="button" data-add-category>+ ${tab==='menu'?'Bereich':'Kategorie'}</button>`+cats().map((c,i)=>`<div class="category-line" data-category-id="${esc(c.id)}"><label>Name<input type="text" data-category-name value="${esc(c.name)}" maxlength="120" aria-label="Kategoriename ${i+1}"></label><label><input type="checkbox" data-category-active ${c.active!==false?'checked':''}> Aktiv</label><div class="category-actions"><button type="button" data-category-up ${i===0?'disabled':''} aria-label="${esc(c.name)} nach oben">↑</button><button type="button" data-category-down ${i===cats().length-1?'disabled':''} aria-label="${esc(c.name)} nach unten">↓</button><button type="button" data-delete-category aria-label="${esc(c.name)} löschen">×</button></div><label class="category-move">${count(c)} Einträge · Beim Löschen verschieben nach <select data-category-target><option value="">Ziel auswählen</option>${cats().filter(x=>x.id!==c.id).map(x=>`<option value="${esc(x.id)}">${esc(x.name)}</option>`).join('')}</select></label></div>`).join('');
- }
- function entries(){return tab==='menu'?(data.menu[filter]||[]).map((x,i)=>({x,i})):data.products.map((x,i)=>({x,i})).filter(({x})=>!filter||x.category===filter);}
- function imageSrc(x){if(x.image_data&&/^data:image\/(jpeg|png|webp);base64,/.test(x.image_data))return x.image_data;if(x.imageRemoved)return '';return /^assets\/[a-zA-Z0-9/_.-]+$/.test(x.image||'')?'../'+x.image:'';}
- function field(name,label,x,area=false){return `<label>${label}${area?`<textarea data-field="${name}" maxlength="5000">${esc(x[name])}</textarea>`:`<input data-field="${name}" value="${esc(x[name])}" maxlength="250">`}</label>`;}
- function render(){
-  $('#category-label').hidden=tab==='team';$('#manage-categories').hidden=tab==='team';$('#manage-categories').textContent=tab==='menu'?'Bereiche verwalten':'Kategorien verwalten';
-  $('#add-row').textContent=tab==='team'?'Beispielperson hinzufügen +':tab==='menu'?'Gericht hinzufügen +':'Produkt hinzufügen +';
-  $('#add-row').disabled=tab==='menu'&&!data.menuCategories.length;
-  if(tab==='team'){
-   panel.hidden=true;list.innerHTML='<p class="notice">Nur Beispielkonten. Echte Konten und Passwörter gehören ausschließlich in die geschützte Serververwaltung.</p>'+data.team.map((x,i)=>`<div class="team-row"><strong>${esc(x.name)}</strong><label>Rolle <select data-role="${i}"><option ${x.role==='Verwaltung'?'selected':''}>Verwaltung</option><option ${x.role==='Redaktion'?'selected':''}>Redaktion</option></select></label><span>Passwort: nur auf dem Server</span></div>`).join('');return;
+// Shared management preview. All edits remain local; this is not a publishing API.
+(async () => {
+  if (!document.body.hasAttribute('data-management-preview')) return;
+  const $ = s => document.querySelector(s), key = 'vineria-management-local-preview-v1';
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const clone = v => JSON.parse(JSON.stringify(v));
+  const uid = () => 'id-' + (globalThis.crypto?.randomUUID?.() || Date.now().toString(36) + Math.random().toString(36).slice(2));
+  const labels = {wochenkarte:'Wochenkarte',klassiker:'Unsere Klassiker',conservas:'Konserven',embutidos:'Chorizo & Cecina',weisswein:'Weißwein',rotwein:'Rotwein'};
+  const money = n => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(Number(n || 0)/100);
+  const safeId = s => typeof s === 'string' && !['__proto__','prototype','constructor'].includes(s);
+  let data, original, undo = null, baseline = null, tab = 'menu', dirty = false, pendingPhotos = 0;
+  let picked = {menu:'',products:''}, showCategories = false, showPreview = false;
+  const photoJobs = new WeakMap();
+  $('#admin-entry').hidden = true; $('#admin-preview').hidden = false;
+  const list = $('#admin-list'), select = $('#admin-category'), status = $('#save-state');
+  function say(text) { status.textContent = text; }
+  function changed() { dirty = true; say('Ungespeicherter Entwurf · nur in diesem Browser.'); if(showPreview) renderPreview(); }
+  function normalize(raw) {
+    const d = clone(raw); d.schemaVersion = 2;
+    d.menu = Object.fromEntries(Object.entries(d.menu || {}).filter(([k,v]) => safeId(k) && Array.isArray(v)));
+    Object.values(d.menu).forEach(rows => rows.forEach(r => { r.id ||= uid(); r.visible = r.visible !== false; }));
+    d.products = Array.isArray(d.products) ? d.products : [];
+    d.team = Array.isArray(d.team) ? d.team : [];
+    d.products.forEach(r => { r.id ||= uid(); r.category ||= 'conservas'; r.visible = r.visible !== false; });
+    // Read drafts produced by both earlier management implementations.
+    d.products.forEach(r => {
+      if(!r.imageData && r.image_data) r.imageData = r.image_data;
+      if(r.imageRemoved) { r.image = ''; r.imageData = ''; }
+    });
+    d.categories ||= {};
+    if(!Array.isArray(d.categories.menu) && Array.isArray(d.menuCategories)) d.categories.menu = d.menuCategories.map(c => ({...c,visible:c.active!==false}));
+    if(!Array.isArray(d.categories.products) && Array.isArray(d.shopCategories)) d.categories.products = d.shopCategories.map(c => ({...c,visible:c.active!==false}));
+    for (const scope of ['menu','products']) {
+      const ids = scope === 'menu' ? Object.keys(d.menu) : [...new Set(d.products.map(p => p.category))];
+      const previous = d.categories[scope];
+      const cats = Array.isArray(previous) ? previous.filter(c => c && safeId(c.id)) : ids.map(id => ({id,name:labels[id] || id,visible:true}));
+      const seen = new Set(); d.categories[scope] = cats.filter(c => !seen.has(c.id) && seen.add(c.id));
+      ids.forEach(id => { if(safeId(id) && !d.categories[scope].some(c => c.id === id)) d.categories[scope].push({id,name:labels[id] || id,visible:true}); });
+      d.categories[scope].forEach(c => { c.name = String(c.name || labels[c.id] || c.id); c.visible = c.visible !== false; if(scope === 'menu') d.menu[c.id] ||= []; });
+    }
+    return d;
   }
-  categorySelect();renderCategories();
-  const rows=entries();list.innerHTML='<div class="edit-list">'+(rows.length?rows.map(({x,i})=>`<div class="edit-row" data-index="${i}"><div><button type="button" class="row-delete" data-delete-row aria-label="${esc(x.name||'Eintrag')} löschen" title="Eintrag löschen">×</button>${field('name','Name',x)}${field('description','Beschreibung',x,true)}</div><label>Preis (€)<input data-field="price" aria-label="Preis ${i+1}" type="number" min="0" step="0.01" value="${((Number(x.price)||0)/100).toFixed(2)}"></label><label><input data-field="visible" type="checkbox" ${x.visible!==false?'checked':''}> Sichtbar</label>${tab==='products'?`<div class="product-fields"><label>Kategorie<select data-field="category">${options(x.category)}</select></label>${field('pack','Format / Inhalt',x)}${field('brand','Hersteller / Marke',x)}${field('note','Weitere Produktinformationen',x,true)}${field('ingredients','Zutaten',x,true)}${field('allergens','Allergene',x,true)}<div class="product-photo">${imageSrc(x)?`<img src="${esc(imageSrc(x))}" alt="${esc(x.name)}">`:'<span>Kein Produktfoto</span>'}<label>Produktfoto hinzufügen / ersetzen<input type="file" data-photo accept="image/jpeg,image/png,image/webp"></label><button type="button" class="photo-clear" data-clear-photo>Foto entfernen</button><small>Nur freigegebene Bilder. Max. 12 MB; auf 1200 Pixel verkleinert. Wird nicht hochgeladen.</small></div></div>`:''}</div>`).join(''):'<p class="empty-state">Keine Einträge in dieser Auswahl. Über „Verwalten“ einen Bereich anlegen oder einen Eintrag hinzufügen.</p>')+'</div>';
- }
- $('#manage-categories').onclick=()=>{panel.hidden=!panel.hidden;renderCategories();};
- panel.addEventListener('input',e=>{const row=e.target.closest('[data-category-id]');if(!row)return;const c=cats().find(x=>x.id===row.dataset.categoryId);if(e.target.hasAttribute('data-category-name')){c.name=e.target.value;categorySelect();dirty();}if(e.target.hasAttribute('data-category-active')){c.active=e.target.checked;categorySelect();dirty();}});
- panel.addEventListener('click',e=>{
-  const b=e.target.closest('button');if(!b)return;
-  if(b.hasAttribute('data-add-category')){const name=prompt(tab==='menu'?'Name des neuen Bereichs:':'Name der neuen Kategorie:');if(!name?.trim())return;const c={id:id(),name:name.trim(),active:true};cats().push(c);if(tab==='menu')data.menu[c.id]=[];filter=c.id;render();dirty();return;}
-  const row=b.closest('[data-category-id]');if(!row)return;const a=cats(),i=a.findIndex(x=>x.id===row.dataset.categoryId),c=a[i];if(!c)return;
-  if(b.hasAttribute('data-delete-category')){const n=count(c),target=row.querySelector('[data-category-target]').value;if(n&&!a.some(x=>x.id===target&&x.id!==c.id)){say('Bitte zuerst einen Zielbereich auswählen. Keine Inhalte wurden gelöscht.');return;}if(!confirm(`„${c.name}“ löschen?${n?' '+n+' Einträge werden verschoben.':''}`))return;remember();if(tab==='menu'){if(n)data.menu[target].push(...data.menu[c.id]);delete data.menu[c.id];}else for(const p of data.products)if(p.category===c.id)p.category=target;a.splice(i,1);}
-  else{const j=b.hasAttribute('data-category-up')?i-1:b.hasAttribute('data-category-down')?i+1:i;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];}
-  render();dirty();
- });
- list.addEventListener('input',e=>{
-  if(e.target.hasAttribute('data-role')){data.team[+e.target.dataset.role].role=e.target.value;dirty();return;}
-  const f=e.target.dataset.field,row=e.target.closest('[data-index]');if(!f||!row)return;const x=tab==='menu'?data.menu[filter][+row.dataset.index]:data.products[+row.dataset.index];
-  if(f==='price'){if(!e.target.checkValidity()||!Number.isFinite(e.target.valueAsNumber)){e.target.setAttribute('aria-invalid','true');say('Bitte einen gültigen Preis ab 0 eingeben.');return;}e.target.removeAttribute('aria-invalid');x.price=Math.round(e.target.valueAsNumber*100);}else x[f]=f==='visible'?e.target.checked:e.target.value;
-  dirty();if(f==='category')render();
- });
- list.addEventListener('click',e=>{const b=e.target.closest('button'),row=b?.closest('[data-index]');if(!row)return;const a=tab==='menu'?data.menu[filter]:data.products,i=+row.dataset.index,x=a[i];if(b.hasAttribute('data-delete-row')){if(!confirm(`„${x.name||'Eintrag'}“ löschen?`))return;remember();a.splice(i,1);render();dirty();}if(b.hasAttribute('data-clear-photo')){x.image_data='';x.imageRemoved=true;render();dirty();}});
- async function resizePhoto(file){
-  if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>12*1024*1024)throw Error('Bitte JPG, PNG oder WebP unter 12 MB wählen.');
-  const url=URL.createObjectURL(file);try{const img=new Image();img.src=url;await img.decode();const scale=Math.min(1,1200/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));const ctx=c.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(img,0,0,c.width,c.height);return c.toDataURL('image/jpeg',.82);}finally{URL.revokeObjectURL(url);}
- }
- list.addEventListener('change',async e=>{if(!e.target.hasAttribute('data-photo'))return;const file=e.target.files[0],x=data.products[+e.target.closest('[data-index]').dataset.index];if(!file||!x)return;e.target.disabled=true;try{const image=await resizePhoto(file);if(!data.products.includes(x))return;x.image_data=image;x.imageRemoved=false;dirty();if(tab==='products')render();}catch(err){say(err.message||'Foto konnte nicht verarbeitet werden.');e.target.disabled=false;}});
- select.onchange=()=>{filter=select.value;render();};
- document.querySelectorAll('[data-admin-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.adminTab;filter='';panel.hidden=true;document.querySelectorAll('[data-admin-tab]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));render();});
- $('#add-row').onclick=()=>{if(tab==='team')data.team.push({name:'Beispielperson '+(data.team.length+1),role:'Redaktion',active:true});else{const x={id:id(),name:'Neuer Eintrag',description:'',price:0,visible:false};if(tab==='menu'){if(!data.menu[filter])return;data.menu[filter].push(x);}else{if(!data.shopCategories.length)data.shopCategories.push({id:id(),name:'Sonstiges',active:true});x.category=filter||data.shopCategories[0].id;x.pack='';data.products.push(x);}}render();dirty();list.querySelector('.edit-row:last-child input[data-field=name]')?.focus();};
- $('#undo-management').onclick=()=>{if(!undo)return;if(!confirm('Stand vor der letzten Löschung wiederherstellen? Auch spätere ungespeicherte Bearbeitungen werden zurückgenommen.'))return;data=undo;undo=null;$('#undo-management').hidden=true;render();dirty();};
- $('#save-demo').textContent='Entwurf speichern';
- $('#save-demo').onclick=()=>{if(list.querySelector('[aria-invalid=true]')||[...data.menuCategories,...data.shopCategories].some(c=>!c.name.trim())){say('Bitte ungültige Preise oder leere Kategorienamen korrigieren.');return;}try{localStorage.setItem(key,JSON.stringify(data));changed=false;say('Entwurf in diesem Browser gespeichert. Noch nicht auf Restaurant- oder Shopseiten veröffentlicht.');}catch{say('Nicht gespeichert: Browserspeicher nicht verfügbar oder voll. Entwurf bleibt geöffnet; Fotos verkleinern oder entfernen.');}};
- $('#reset-demo').onclick=()=>{if(!confirm('Alle lokalen Teständerungen zurücksetzen?'))return;try{localStorage.removeItem(key);}catch{say('Speicher nicht verfügbar. Zurücksetzen abgebrochen.');return;}data=clone(original);filter='';undo=null;changed=false;$('#undo-management').hidden=true;render();say('Beispieldaten wiederhergestellt.');};
- window.addEventListener('beforeunload',e=>{if(changed){e.preventDefault();e.returnValue='';}});
- window.addEventListener('storage',e=>{if(e.key===key)say('Ein anderer Tab hat den Entwurf geändert. Vor dem Überschreiben bitte prüfen; diese Ansicht wurde nicht ersetzt.');});
- render();
+  try {
+    const response = await fetch('../assets/catalog.json'); if(!response.ok) throw Error('catalog');
+    const c = await response.json();
+    original = normalize({menu:Object.fromEntries(Object.entries(c.menu).map(([k,v]) => [k,v.map(x => ({name:x[0],description:x[1],price:x[2],visible:true}))])),products:c.products,team:[{name:'Buñol',role:'Verwaltung',active:true},{name:'Kraft',role:'Verwaltung',active:true}]});
+    try { baseline = localStorage.getItem(key); const stored = baseline && JSON.parse(baseline); data = stored?.menu && Array.isArray(stored.products) ? normalize(stored) : clone(original); }
+    catch { data = clone(original); say('Gespeicherte Daten konnten nicht gelesen werden. Vor dem Zurücksetzen bitte prüfen.'); }
+  } catch { list.innerHTML = '<p class="empty-state">Die Beispieldaten konnten nicht geladen werden. Bitte den Web-Link neu laden.</p>'; return; }
+  const style = document.createElement('style');
+  style.textContent = `.mgmt-panel{border:1px solid #c9c5bc;padding:20px;margin:18px 0;background:#fffdf7}.mgmt-panel h2{font-size:25px}.mgmt-note{font:12px/1.6 Arial,sans-serif;color:#57534c}.mgmt-cats{display:grid;gap:14px}.mgmt-cat{border-top:1px solid #d5d0c5;padding:14px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.mgmt-cat input[type=text]{min-width:170px;flex:1}.mgmt-cat label{font-size:12px}.mgmt-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.mgmt-panel button,.mgmt-delete,.mgmt-photo button{cursor:pointer;padding:8px 12px;border:1px solid #8d8178;background:transparent;color:inherit;font:13px Arial,sans-serif}.mgmt-delete{color:#8b233f;align-self:start}.mgmt-detail{grid-column:1/-1;border-top:1px solid #ddd6cb;padding-top:14px}.mgmt-detail summary{cursor:pointer;font-weight:bold}.mgmt-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:15px}.mgmt-grid label{display:block;min-width:0;font-size:12px}.mgmt-grid input,.mgmt-grid textarea,.mgmt-grid select,.mgmt-panel input,.mgmt-panel select{box-sizing:border-box;width:100%;padding:9px;border:1px solid #c5bdb0;background:#fff;color:#222;font:14px Arial,sans-serif}.mgmt-panel input[type=checkbox]{width:auto}.mgmt-grid textarea{min-height:75px}.mgmt-photo{margin-top:18px}.mgmt-photo img,.mgmt-customer img{width:150px;height:150px;object-fit:contain;border:1px solid #ddd;background:#fff}.mgmt-photo input{max-width:100%}.mgmt-customer{display:grid;gap:18px}.mgmt-customer article{padding:18px;border:1px solid #d5d0c5}.mgmt-customer h3{margin:4px 0 8px}.mgmt-customer p{white-space:pre-wrap}.mgmt-marker{font:12px Arial,sans-serif;color:#6d4c32}.edit-row{grid-template-columns:minmax(0,1fr) 110px 85px 44px!important}.edit-row>*{min-width:0}.edit-row input[type=checkbox]{width:auto!important}.mgmt-wide{grid-column:1/-1}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #802a40;outline-offset:3px}@media(max-width:650px){.edit-row{grid-template-columns:minmax(0,1fr) 85px!important}.mgmt-detail{grid-column:1/-1}.mgmt-grid{grid-template-columns:1fr}.mgmt-panel{padding:14px}.mgmt-cat{align-items:flex-start}.mgmt-cat>input{flex-basis:100%}.mgmt-cat select{max-width:100%}}`;
+  document.head.append(style);
+  const marker = document.createElement('p'); marker.className = 'mgmt-marker'; marker.textContent = 'Verwaltung · Revision 2 · Kategorien, Löschen, Produktfotos'; $('#admin-preview').prepend(marker);
+  const manage = document.createElement('button'); manage.type = 'button'; manage.className = 'button outline'; manage.id = 'manage-categories'; manage.textContent = 'Kategorien verwalten'; manage.setAttribute('aria-expanded','false'); manage.setAttribute('aria-controls','category-manager'); $('#add-row').before(manage);
+  const undoButton = document.createElement('button'); undoButton.type='button'; undoButton.className='button outline'; undoButton.id='undo-management'; undoButton.textContent='Letzte Löschung rückgängig'; undoButton.hidden=true; manage.after(undoButton);
+  function remember() { undo=clone(data); undoButton.hidden=false; }
+  undoButton.onclick=()=>{if(!undo || !confirm('Stand vor der letzten Löschung wiederherstellen? Auch spätere Bearbeitungen werden zurückgenommen.'))return;data=normalize(undo);undo=null;undoButton.hidden=true;changed();render();};
+  const manager = document.createElement('section'); manager.id = 'category-manager'; manager.className = 'mgmt-panel'; manager.hidden = true; list.before(manager);
+  const previewButton = document.createElement('button'); previewButton.type = 'button'; previewButton.className = 'button outline'; previewButton.id = 'customer-preview-button'; previewButton.textContent = 'Kundensicht prüfen'; previewButton.setAttribute('aria-expanded','false'); $('#save-demo').after(previewButton);
+  const preview = document.createElement('section'); preview.id = 'customer-preview'; preview.className = 'mgmt-panel'; preview.hidden = true; $('#admin-preview').append(preview);
+  const exportButton = document.createElement('button'); exportButton.className = 'text-button'; exportButton.type = 'button'; exportButton.textContent = 'Entwurf als JSON sichern'; $('#reset-demo').after(exportButton);
+  $('#save-demo').textContent = 'Entwurf lokal speichern';
+  function cats() { return data.categories[tab] || []; }
+  function entries(scope,id) { return scope === 'menu' ? data.menu[id] || [] : data.products.filter(p => p.category === id); }
+  function rows() { return tab === 'menu' ? data.menu[picked.menu] || [] : tab === 'products' ? data.products.filter(p => !picked.products || p.category === picked.products) : data.team; }
+  function options(items,selected,all=false) { return (all ? '<option value="">Alle Produkte</option>' : '') + items.map(c => `<option value="${esc(c.id)}" ${c.id===selected?'selected':''}>${esc(c.name)}${c.visible===false?' (ausgeblendet)':''}</option>`).join(''); }
+  function imageUrl(row) {
+    if(/^data:image\/(jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(row.imageData || '')) return row.imageData;
+    if(typeof row.image === 'string' && /^assets\/[a-z0-9_./-]+$/i.test(row.image) && !row.image.includes('..')) return new URL('../'+row.image,location.href).href;
+    return '';
+  }
+  function field(name,label,value,area=false) { return `<label>${label}${area ? `<textarea data-field="${name}" maxlength="5000">${esc(value)}</textarea>` : `<input data-field="${name}" value="${esc(value)}" maxlength="250">`}</label>`; }
+  function renderCategories() {
+    manager.hidden = !showCategories || tab === 'team'; manage.setAttribute('aria-expanded',String(!manager.hidden)); if(manager.hidden) return;
+    manager.innerHTML = `<h2>${tab==='menu'?'Bereiche der Speisekarte':'Kategorien der Tienda'}</h2><p class="mgmt-note">Umbenennen erhält alle Einträge. Ausblenden blendet auch den Inhalt aus. Gefüllte Kategorien erst in eine andere Kategorie verschieben, dann löschen.</p><div class="mgmt-cats">${cats().map((c,i) => `<div class="mgmt-cat" data-cat="${esc(c.id)}"><input type="text" data-cat-name aria-label="Kategoriename ${i+1}" required maxlength="120" value="${esc(c.name)}"><label><input type="checkbox" data-cat-visible ${c.visible?'checked':''}> Aktiv</label><span>${entries(tab,c.id).length} Einträge</span><div class="mgmt-actions"><button type="button" data-move="-1" aria-label="Kategorie nach oben" ${i===0?'disabled':''}>↑</button><button type="button" data-move="1" aria-label="Kategorie nach unten" ${i===cats().length-1?'disabled':''}>↓</button><button type="button" data-delete-category aria-label="Kategorie löschen">×</button></div>${entries(tab,c.id).length ? `<label>Vor dem Löschen verschieben nach<select data-target aria-label="Zielkategorie"><option value="">Ziel wählen …</option>${options(cats().filter(x=>x.id!==c.id),'')}</select></label>` : ''}</div>`).join('')}</div><button type="button" id="add-category">+ Neue Kategorie</button>`;
+    manager.querySelectorAll('[data-cat]').forEach(el => {
+      const c = cats().find(c=>c.id===el.dataset.cat);
+      el.querySelector('[data-cat-name]').onchange = e => { if(!e.target.value.trim()){e.target.setCustomValidity('Bitte einen Namen eingeben.');e.target.reportValidity();return;} e.target.setCustomValidity('');c.name=e.target.value.trim();changed();render(); };
+      el.querySelector('[data-cat-visible]').onchange = e => { c.visible=e.target.checked;changed();render(); };
+      el.querySelectorAll('[data-move]').forEach(b => b.onclick = () => { const a=cats(),i=a.indexOf(c),j=i+Number(b.dataset.move);if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];changed();render(); });
+      el.querySelector('[data-delete-category]').onclick = () => {
+        const count=entries(tab,c.id).length,target=el.querySelector('[data-target]')?.value;
+        if(count && !cats().some(x=>x.id===target && x.id!==c.id)){say('Bitte zuerst eine Zielkategorie wählen oder die Einträge einzeln entfernen.');return;}
+        if(!confirm(`Kategorie „${c.name}“ löschen?${count?' Die '+count+' Einträge werden in die gewählte Kategorie verschoben.':''}`))return;
+        remember();
+        if(tab==='menu'){if(count)data.menu[target].push(...data.menu[c.id]);delete data.menu[c.id];}
+        else data.products.forEach(p=>{if(p.category===c.id)p.category=target;});
+        data.categories[tab]=cats().filter(x=>x.id!==c.id);if(picked[tab]===c.id)picked[tab]=target || '';changed();render();
+      };
+    });
+    $('#add-category').onclick=()=>{const id=uid();cats().push({id,name:'Neue Kategorie',visible:false});if(tab==='menu')data.menu[id]=[];picked[tab]=id;changed();render();const input=manager.querySelector(`[data-cat="${id}"] input`);input.focus();input.select();};
+  }
+  function renderPreview() {
+    preview.hidden = !showPreview || tab === 'team'; if(preview.hidden)return;
+    preview.innerHTML = '<h2>Kundensicht · Inhaltsvorschau</h2><p class="mgmt-note">Zeigt diesen lokalen Entwurf, nicht die veröffentlichte Website. Aktive Kategorien und sichtbare Einträge, in der gewählten Reihenfolge. Kein Verkauf.</p>' + cats().filter(c=>c.visible).map(c=>{const visible=entries(tab,c.id).filter(r=>r.visible!==false);return visible.length?`<h3>${esc(c.name)}</h3><div class="mgmt-customer">${visible.map(r=>`<article>${tab==='products'&&imageUrl(r)?`<img src="${esc(imageUrl(r))}" alt="${esc(r.imageAlt || r.name)}">`:''}<h3>${esc(r.name)}</h3><p>${esc(r.description)}</p><strong>${money(r.price)}</strong>${tab==='products'?`<p>${esc(r.pack)}</p>${['ingredients','allergens','nutrition','storage','note'].filter(k=>r[k]).map(k=>`<p><b>${({ingredients:'Zutaten',allergens:'Allergene',nutrition:'Nährwerte',storage:'Lagerung',note:'Information'})[k]}:</b> ${esc(r[k])}</p>`).join('')}`:''}</article>`).join('')}</div>`:'';}).join('');
+  }
+  function render() {
+    const opened = new Set([...list.querySelectorAll('.mgmt-detail[open]')].map(e=>e.dataset.detail));
+    const isTeam=tab==='team';$('#category-label').hidden=isTeam;manage.hidden=isTeam;previewButton.hidden=isTeam;
+    if(!isTeam){if(tab==='menu'&&!cats().some(c=>c.id===picked.menu))picked.menu=cats()[0]?.id || '';if(tab==='products'&&picked.products&&!cats().some(c=>c.id===picked.products))picked.products='';select.innerHTML=options(cats(),picked[tab],tab==='products');select.disabled=!cats().length;}
+    $('#add-row').textContent=isTeam?'Beispielperson hinzufügen +':tab==='menu'?'Gericht hinzufügen +':'Produkt hinzufügen +';$('#add-row').disabled=!isTeam&&!cats().length;
+    renderCategories();renderPreview();
+    if(isTeam){list.innerHTML='<p class="notice">Team-Demo. Keine echten Konten, Passwörter oder Berechtigungsänderungen.</p>'+data.team.map((r,i)=>`<div class="team-row"><strong>${esc(r.name)}</strong><label>Rolle <select data-role="${i}"><option ${r.role==='Verwaltung'?'selected':''}>Verwaltung</option><option ${r.role==='Redaktion'?'selected':''}>Redaktion</option></select></label><span>Passwort: nur auf dem Server</span></div>`).join('');list.querySelectorAll('[data-role]').forEach(e=>e.onchange=()=>{data.team[Number(e.dataset.role)].role=e.value;changed();});return;}
+    const visibleRows=rows();
+    list.innerHTML=(cats().find(c=>c.id===picked[tab])?.visible===false?'<p class="mgmt-note">Diese Kategorie ist ausgeblendet. Ihre Einträge bleiben erhalten.</p>':'')+'<div class="edit-list">'+visibleRows.map((r,i)=>`<div class="edit-row" data-row="${i}"><div>${field('name','Name',r.name)}${field('description','Beschreibung',r.description,true)}</div><label>Preis (€)<input data-field="price" aria-label="Preis ${i+1}" type="number" required min="0" max="100000" step="0.01" value="${(Number(r.price || 0)/100).toFixed(2)}"></label><label><input data-field="visible" type="checkbox" ${r.visible!==false?'checked':''}> Sichtbar</label><button type="button" class="mgmt-delete" data-delete-row aria-label="Eintrag löschen">×</button>${tab==='products'?`<details class="mgmt-detail" data-detail="${esc(r.id)}" ${opened.has(r.id)?'open':''}><summary>Produktdaten & Foto bearbeiten</summary><div class="mgmt-grid"><label>Kategorie<select data-field="category">${options(cats(),r.category)}</select></label>${field('pack','Format / Packung',r.pack)}${field('brand','Hersteller / Marke',r.brand)}${field('imageAlt','Bildbeschreibung',r.imageAlt)}${field('ingredients','Zutaten',r.ingredients,true)}${field('allergens','Allergene',r.allergens,true)}${field('nutrition','Nährwerte',r.nutrition,true)}${field('storage','Lagerung',r.storage,true)}${field('note','Weitere Produktinformation',r.note,true)}</div><div class="mgmt-photo">${imageUrl(r)?`<img src="${esc(imageUrl(r))}" alt="${esc(r.imageAlt||r.name)}">`:'<p>Kein Foto ausgewählt.</p>'}<label>Foto hinzufügen / ersetzen<input data-photo type="file" accept="image/jpeg,image/png,image/webp"></label><p class="mgmt-note">Eigene freigegebene Bilder · JPG, PNG, WebP · maximal 12 MB. Speicherung nur in diesem Browser.</p><button type="button" data-remove-photo ${imageUrl(r)?'':'disabled'}>Foto entfernen</button></div></details>`:''}</div>`).join('')+'</div>'+(visibleRows.length?'':'<p class="empty-state">Noch keine Einträge. Kategorie anlegen oder einen Eintrag hinzufügen.</p>');
+    list.querySelectorAll('[data-row]').forEach(el=>{
+      const r=visibleRows[Number(el.dataset.row)];
+      el.querySelectorAll('[data-field]').forEach(e=>e.addEventListener(e.tagName==='SELECT'?'change':'input',()=>{const f=e.dataset.field;if(f==='price'){if(!e.validity.valid)return;r.price=Math.round(Number(e.value)*100);}else r[f]=f==='visible'?e.checked:e.value;changed();if(f==='category')render();}));
+      el.querySelector('[data-delete-row]').onclick=()=>{if(!confirm(`„${r.name || 'Eintrag'}“ wirklich löschen? Zum vorübergehenden Ausblenden nur „Sichtbar“ ausschalten.`))return;remember();const target=tab==='menu'?data.menu[picked.menu]:data.products;target.splice(target.indexOf(r),1);changed();render();};
+      const file=el.querySelector('[data-photo]');if(file)file.onchange=()=>loadPhoto(file.files[0],r);
+      const remove=el.querySelector('[data-remove-photo]');if(remove)remove.onclick=()=>{if(!confirm('Nur das Foto entfernen? Das Produkt bleibt erhalten.'))return;photoJobs.set(r,uid());r.image='';r.imageData='';r.image_data='';r.imageRemoved=true;r.imageAlt='';changed();render();};
+    });
+  }
+  async function loadPhoto(file,row) {
+    if(!file)return;
+    if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>12*1024*1024){say('Bitte JPG, PNG oder WebP unter 12 MB auswählen.');return;}
+    const token=uid();photoJobs.set(row,token);pendingPhotos++;say('Foto wird für den lokalen Entwurf vorbereitet.');const url=URL.createObjectURL(file);
+    try {const img=new Image();await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=url;});const scale=Math.min(1,1200/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));const ctx=canvas.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);if(photoJobs.get(row)!==token)return;row.imageData=canvas.toDataURL('image/jpeg',0.82);row.image='';row.imageRemoved=false;row.imageAlt ||= row.name;changed();render();}
+    catch {say('Das Foto konnte nicht gelesen werden. Das bisherige Bild bleibt erhalten.');}
+    finally {pendingPhotos--;URL.revokeObjectURL(url);}
+  }
+  select.onchange=()=>{picked[tab]=select.value;render();};
+  manage.onclick=()=>{showCategories=!showCategories;renderCategories();};
+  previewButton.onclick=()=>{showPreview=!showPreview;previewButton.setAttribute('aria-expanded',String(showPreview));renderPreview();if(showPreview)preview.scrollIntoView({block:'start'});};
+  document.querySelectorAll('[data-admin-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.adminTab;document.querySelectorAll('[data-admin-tab]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));render();});
+  $('#add-row').onclick=()=>{if(tab==='team')data.team.push({name:'Beispielperson '+(data.team.length+1),role:'Redaktion',active:true});else{const r={id:uid(),name:tab==='menu'?'Neues Gericht':'Neues Produkt',description:'',price:0,visible:false};if(tab==='menu')data.menu[picked.menu].push(r);else data.products.push({...r,category:picked.products||cats()[0].id,pack:'',brand:''});}changed();render();const last=list.querySelector('.edit-row:last-child input');last?.focus();last?.select();};
+  $('#save-demo').onclick=()=>{
+    if(pendingPhotos){say('Bitte die laufende Bildverarbeitung abschließen lassen.');return;}
+    const invalid=$('#admin-preview').querySelector('input:invalid,textarea:invalid,select:invalid');if(invalid){invalid.reportValidity();return;}
+    try {if(localStorage.getItem(key)!==baseline){say('Der gespeicherte Entwurf wurde in einem anderen Fenster geändert. Bitte diesen Entwurf als JSON sichern und neu laden; nichts wurde überschrieben.');return;}syncCompatibility();const next=JSON.stringify(data);localStorage.setItem(key,next);baseline=next;dirty=false;say('Entwurf lokal gespeichert. Nicht für andere Besucher veröffentlicht.');}
+    catch {say('Speicherung nicht möglich oder Browserspeicher voll. Entwurf als JSON sichern; Bilder gegebenenfalls verkleinern.');}
+  };
+  function syncCompatibility() {
+    data.menuCategories=data.categories.menu.map(c=>({id:c.id,name:c.name,active:c.visible}));
+    data.shopCategories=data.categories.products.map(c=>({id:c.id,name:c.name,active:c.visible}));
+    data.products.forEach(r=>{r.image_data=r.imageData || '';});
+  }
+  exportButton.onclick=()=>{syncCompatibility();const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='vineria-verwaltung-entwurf.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+  $('#reset-demo').onclick=()=>{if(!confirm('Alle lokalen Teständerungen einschließlich Fotos zurücksetzen? Vorher bei Bedarf als JSON sichern.'))return;if(pendingPhotos){say('Zurücksetzen erst nach Abschluss der Bildverarbeitung.');return;}try{localStorage.removeItem(key);baseline=null;data=clone(original);undo=null;undoButton.hidden=true;picked={menu:'',products:''};dirty=false;render();say('Beispieldaten wiederhergestellt. Keine Website geändert.');}catch{say('Browserspeicher nicht erreichbar; es wurde nichts zurückgesetzt.');}};
+  window.addEventListener('storage',e=>{if(e.key===key)say('Ein anderer Tab hat den Entwurf geändert. Vor dem Speichern abgleichen oder als JSON sichern.');});
+  window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+  render();
 })();

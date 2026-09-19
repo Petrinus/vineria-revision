@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-19",
+  "management_blob_sha": "379f6cabf26a718ac5b66b7654e30fb3f8c4e848",
+  "syntax_check": "node --check: PASS",
+  "browser_checks": 35,
+  "result": "PASS",
+  "scope": "Chromium with local DOM fixture, representative catalogue, stubbed fetch and storage. Browser network was unavailable. This is not a production-publishing or full-site integration test.",
+  "checked": ["Initial catalogue and filters", "Rename category preserves dishes and prices", "Hide and restore entire category in local customer preview", "Delete nonempty category requires transfer destination", "Transfer dishes before deleting category", "Create and delete menu categories", "Create and delete dishes", "Undo deletion", "Independent shop categories", "Filter products", "Upload and resize product photo", "Serialize and restore photos and ingredients", "Remove photo without removing product", "Escape HTML in customer preview", "Delete filtered product without touching others", "Assign new product to new category", "Schema migration", "Reject overwrite after another tab modifies storage", "No horizontal overflow at 390px in fixture", "Team remains a demo", "Preserve existing menuCategories and shopCategories labels and active flags", "Preserve legacy image_data and imageRemoved", "Retain backwards-compatible draft fields", "No browser JavaScript exceptions"],
+  "unimplemented": ["Authenticated shared publishing to restaurant and shop pages", "Production customer orders, payments or accounts"],
+  "deployment_note": "Source and compiled management assets updated together. Existing restaurant/shop design pages retained. No full proposal rebuild: the older catalogue builder enumerates seven proposals and could replace the newer model-08 selector."
+}
