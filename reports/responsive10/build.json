@@ -1,0 +1,11 @@
+{
+  "model": "v10",
+  "html_pages_updated": 17,
+  "other_models_unchanged": true,
+  "new_models": 0,
+  "implementation": "semantic responsive HTML + separate transparent PNG artwork, not a tiled image",
+  "modals_removed": true,
+  "live_menu_items": 36,
+  "products": 11,
+  "fonts": "Live headlines and controls use locally served fonts or system fallbacks. Not a certified original font identification."
+}

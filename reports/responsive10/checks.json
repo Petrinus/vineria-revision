@@ -1,0 +1,247 @@
+{
+  "passed": false,
+  "count": 48,
+  "checks": [
+    {
+      "name": "restaurant all images load",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "restaurant no old screenshot-board or hotspot navigation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant clean separated PNG present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant fits 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant fits 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant fits 768",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant fits 1024",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant fits 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "restaurant fits 1920",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all menu entries visible by default",
+      "pass": true,
+      "detail": 36
+    },
+    {
+      "name": "live headline is text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "category mode works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "full menu returns",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "wine nav selects wine category",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "navigation to vineria",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "navigation to besuch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "navigation to speisekarte",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "catering opens inline",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "catering group selection",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "event form validates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "six curated Instagram photos retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "mobile menu opens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "mobile menu closes after choosing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "about visible after mobile navigation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "mobile menu Escape closes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "larger text reflows",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop all images load",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "shop no old screenshot-board or hotspot navigation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop clean separated PNG present",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "shop fits 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop fits 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop fits 768",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop fits 1024",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop fits 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop fits 1920",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shop catalogue retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "test cart adds product",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "test checkout works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "checkout fits 320",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "checkout fits 390",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "checkout fits 768",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "checkout fits 1440",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "product detail works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "shared management connected in browser",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ten models preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no browser errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "all local navigation and resource paths exist",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "only transparent clean PNGs imported",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "errors": []
+}
