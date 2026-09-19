@@ -2,7 +2,7 @@ name: Publish all design proposals
 on:
   push:
     branches: [main]
-    paths: ['proposal-source/**', 'tools/proposals.py', 'tools/qa_proposals.py', 'src/proposals/**', '.github/workflows/proposal-catalogue.yml']
+    paths: ['proposal-source/**', 'tools/proposals.py', 'tools/qa_proposals.py', 'tools/proposal_fixes.py', 'src/proposals/**', '.github/workflows/proposal-catalogue.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -30,8 +30,8 @@ jobs:
               assert '..' not in p.parts and not p.is_absolute()
               assert name.startswith('src/proposals/') or name in ['tools/proposals.py','tools/qa_proposals.py']
               p.parent.mkdir(parents=True,exist_ok=True)
-              p.write_text(content)
-          print('Restored',len(files),'reviewed source files')
+              if not p.exists(): p.write_text(content)
+          print('Restored missing reviewed source files; existing editable sources retained')
           PY
       - name: Install browser verification tools
         run: |
@@ -43,6 +43,7 @@ jobs:
           python3 tools/refine.py
           python3 tools/polish.py
           python3 tools/proposals.py
+          python3 tools/proposal_fixes.py
       - name: Verify all pairs and capture real thumbnails
         run: python3 tools/qa_proposals.py
       - name: Publish catalogue files and sources
