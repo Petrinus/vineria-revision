@@ -17,10 +17,22 @@ css='''
 '''
 with (A/'lab.css').open('a')as f:f.write(css)
 js='''
+/* Whole-pixel positioning at the reference's native size; proportional at smaller sizes. */
 (()=>{
 const board=document.querySelector('.replica-board');
 if(!board)return;
-function align(){board.style.transform='none';const r=board.getBoundingClientRect();if(r.width>0)board.style.transform='translate('+String(Math.round(r.x)-r.x)+'px,'+String(Math.round(r.y)-r.y)+'px)';}
+const pieces=[...board.querySelectorAll('.ref-piece')].map(el=>({el,left:el.style.left,top:el.style.top,width:el.style.width,height:el.style.height}));
+function align(){
+board.style.transform='none';board.style.left='0px';board.style.top='0px';
+const r=board.getBoundingClientRect();
+if(r.width<=0)return;
+board.style.left=String(Math.round(r.x)-r.x)+'px';board.style.top=String(Math.round(r.y)-r.y)+'px';
+for(const p of pieces){
+for(const key of ['left','top','width','height']){
+const dim=key==='left'||key==='width'?r.width:r.height;
+p.el.style[key]=r.width===1217?String(Math.round(parseFloat(p[key])*dim/100))+'px':p[key];
+}}
+}
 align();window.addEventListener('resize',align);
 })();
 '''
