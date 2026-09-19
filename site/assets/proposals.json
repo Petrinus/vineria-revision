@@ -1,0 +1,79 @@
+[
+  {
+    "id": "v1",
+    "num": "01",
+    "title": "Klassisch & ruhig",
+    "detail": "Creme, Bordeaux und weiche Formen. Eine klare, zurückhaltende Gestaltung.",
+    "paper": "#f6f1e7",
+    "ink": "#522630",
+    "accent": "#542631",
+    "soft": "#e7dfcd",
+    "radius": "28px"
+  },
+  {
+    "id": "v2",
+    "num": "02",
+    "title": "Editorial & großzügig",
+    "detail": "Große Überschriften, feine Linien und mehr Raum für Karte und Bilder.",
+    "paper": "#f4eedf",
+    "ink": "#35281f",
+    "accent": "#752c35",
+    "soft": "#e8dfcd",
+    "radius": "0"
+  },
+  {
+    "id": "v3",
+    "num": "03",
+    "title": "Kunst & Farbe",
+    "detail": "Die farbige Grafikstudie mit spanischen Akzenten und einer expressiven Bildsprache.",
+    "paper": "#f5f0e4",
+    "ink": "#242c29",
+    "accent": "#923b4e",
+    "soft": "#e5e9dc",
+    "radius": "0"
+  },
+  {
+    "id": "v4",
+    "num": "04",
+    "title": "Kunst & deutsche Texte",
+    "detail": "Die künstlerische Gestaltung mit Deutsch als Hauptsprache und wenigen spanischen Akzenten.",
+    "paper": "#f5f0e4",
+    "ink": "#242c29",
+    "accent": "#923b4e",
+    "soft": "#e5e9dc",
+    "radius": "0"
+  },
+  {
+    "id": "v5",
+    "num": "05",
+    "title": "Restaurant & Tienda",
+    "detail": "Die warme, künstlerische Linie mit der Tienda als festem Teil des Restaurantauftritts.",
+    "paper": "#f5f0e4",
+    "ink": "#242c29",
+    "accent": "#923b4e",
+    "soft": "#e5e9dc",
+    "radius": "0"
+  },
+  {
+    "id": "v6a",
+    "num": "06A",
+    "title": "Fanzine & Fotokopie",
+    "detail": "Schwarzweiß, Papierkanten und transparente Fotocollagen mit ruhigem Bilderwechsel.",
+    "paper": "#f7f6f1",
+    "ink": "#171717",
+    "accent": "#171717",
+    "soft": "#e8e7e1",
+    "radius": "0"
+  },
+  {
+    "id": "v6b",
+    "num": "06B",
+    "title": "Fotografie & warme Töne",
+    "detail": "Die Alternative mit Originalfotos, Creme und Weinrot. Gleicher Aufbau für Restaurant und Tienda.",
+    "paper": "#f5f0e4",
+    "ink": "#352b27",
+    "accent": "#89354b",
+    "soft": "#e6e9dd",
+    "radius": "0"
+  }
+]

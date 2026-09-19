@@ -1,0 +1,527 @@
+[
+  {
+    "name": "entwuerfe/v1/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v1/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v1/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v1/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v1/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v1/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v1/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v1/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v1/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v1/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v1/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v1/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v2/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v2/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v2/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v2/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v2/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v2/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v2/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v2/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v2/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v2/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v2/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v2/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v3/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v3/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v3/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v3/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v3/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v3/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v3/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v3/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v3/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v3/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v3/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v3/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v4/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v4/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v4/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v4/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v4/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v4/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v4/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v4/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v4/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v4/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v4/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v4/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v5/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v5/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v5/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v5/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v5/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v5/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v5/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v5/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v5/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v5/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v5/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v5/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v6a/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6a/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6a/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6a/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v6a/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v6a/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v6a/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6a/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6a/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6a/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v6a/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v6a/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v6b/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6b/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6b/index.html matching shop link",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6b/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v6b/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v6b/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "entwuerfe/v6b/shop/index.html loads",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6b/shop/index.html no green stars",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6b/shop/index.html 11 products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "entwuerfe/v6b/shop/index.html images",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "entwuerfe/v6b/shop/index.html width 390",
+    "pass_": true,
+    "detail": "{'s': 390, 'w': 390}"
+  },
+  {
+    "name": "entwuerfe/v6b/shop/index.html width 320",
+    "pass_": true,
+    "detail": "{'s': 320, 'w': 320}"
+  },
+  {
+    "name": "7 equal proposal cards",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "No preferred design",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "No iframe until selection",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Shared management present",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Pair viewer opens",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Restaurant and shop paired",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Independent comparison",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Mobile comparison",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Closing clears frames",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Portal mobile no overflow",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Variant 01 cart works",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Checkout belongs to same pair",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Separate management page",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "No real password entry",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Management menu 13 weekly rows",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Demo saved locally",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "11 management products",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "Two preview team entries",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "No password in preview",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "name": "No JavaScript exceptions",
+    "pass_": true,
+    "detail": "[]"
+  },
+  {
+    "name": "All local links and assets exist",
+    "pass_": true,
+    "detail": "[]"
+  }
+]
