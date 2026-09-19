@@ -37,7 +37,6 @@ def head(title,page):
  return '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>'+E(title)+'</title>'+''.join('<link rel="stylesheet" href="'+rel('assets/'+c,page)+'">'for c in ['site.css','content.css','proposal-chrome.css','responsive10.css'])
 def build():
  P.mkdir(exist_ok=True)
- # Correct the upper contour of the photograph: keep the whole visible head and original scene.
  src=Image.open(A/'lab/reference-original.png').convert('RGBA');mask=Image.new('L',src.size,0)
  pts=[(0,337),(56,323),(142,333),(215,350),(276,351),(274,185),(337,171),(501,135),(553,148),(551,292),(568,533),(584,708),(596,802),(565,826),(494,843),(409,831),(346,850),(243,854),(165,852),(81,856),(0,835)]
  ImageDraw.Draw(mask).polygon(pts,fill=255);src.putalpha(mask.filter(ImageFilter.GaussianBlur(.4)));src.crop(src.getchannel('A').getbbox()).save(P/'toast-photo.png',optimize=True)
@@ -54,14 +53,12 @@ def build():
  js=''.join('<script defer src="'+rel('assets/'+f,page)+'"></script>'for f in ['content-engine.js','responsive10-ui.js'])
  full='<!DOCTYPE html><html lang="de"><head>'+head('Vineria del Este · Modell 10 · Papier, Wein & Tapas',page)+seed_script(data,page)+js+'</head><body class="v10-layout"><a class="skip" href="#main">Zum Inhalt</a>'+bar(page)+header(page)+'<main id="main">'+markup+'</main>'+footer(page)+'</body></html>'
  (S/page).write_text(full)
- # Preserve existing product/cart/checkout logic and data; replace only visual chrome.
  changed=[page]
  for p in (S/'entwuerfe/v10').rglob('*.html'):
   if p==S/page:continue
   page2=p.relative_to(S).as_posix();s=parse(p.read_text());s.body['class']=['v10-layout','v10-shop']
   for e in list(s.select('link[rel=stylesheet],style')):e.decompose()
-  for c in ['site.css','content.css','proposal-chrome.css','responsive10.css']:
-   s.head.append(s.new_tag('link',rel='stylesheet',href=rel('assets/'+c,page2)))
+  for c in ['site.css','content.css','proposal-chrome.css','responsive10.css']:s.head.append(s.new_tag('link',rel='stylesheet',href=rel('assets/'+c,page2)))
   for el in list(s.select('.proposal-nav,header,footer')):el.decompose()
   for el in reversed(list(parse(bar(page2)+header(page2)).contents)):s.body.insert(0,el)
   for el in list(parse(footer(page2)).contents):s.body.append(el)
@@ -70,14 +67,13 @@ def build():
    if name not in ['content-engine.js','site.js']:script.decompose()
   s.head.append(s.new_tag('script',src=rel('assets/responsive10-ui.js',page2),defer=''))
   if page2.endswith('/shop/index.html'):
-   h=s.select_one('.shop-hero')
-   if h:
-    h.clear();h['class']=['v10-store-hero']
-    fragment='<div><p class="eyebrow">VINERIA DEL ESTE · TIENDA</p><h1>Ein Stück Spanien.<br>Für Deinen Tisch.</h1><p>Weine, Konserven und gute Dinge zum Teilen. Die Auswahl aus unserer Vineria für zu Hause.</p><a href="#sortiment" class="v10-button">Auswahl entdecken ↓</a></div>'+image('bottle-ink.png',page2,'Botella y copa · dibujo original sin papel','', 'fetchpriority="high"')
-    for el in list(parse(fragment).contents):h.append(el)
+   h=s.select_one('.lab-shop-lead,.shop-hero,.v10-store-hero')
+   assert h is not None,'Missing shop hero container'
+   h.clear();h['class']=['v10-store-hero']
+   fragment='<div><p class="eyebrow">VINERIA DEL ESTE · TIENDA</p><h1>Ein Stück Spanien.<br>Für Deinen Tisch.</h1><p>Weine, Konserven und gute Dinge zum Teilen. Die Auswahl aus unserer Vineria für zu Hause.</p><a href="#sortiment" class="v10-button">Auswahl entdecken ↓</a></div>'+image('bottle-ink.png',page2,'Botella y copa · dibujo original sin papel','', 'fetchpriority="high"')
+   for el in list(parse(fragment).contents):h.append(el)
   p.write_text(str(s));changed.append(page2)
  for name in ['responsive10.css','responsive10-ui.js']:shutil.copyfile(R/'responsive10'/name,A/name)
- # Label this improvement in the existing catalogue. Keep the same model ID and all other cards.
  index=parse((S/'index.html').read_text());card=index.select_one('[data-proposal="v10"]')
  if card:
   for label in card.select('h2,h3'):
